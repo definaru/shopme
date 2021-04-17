@@ -13,7 +13,7 @@ module.exports = {
         return {
             '/': { page: '/' },
             '/about': { page: '/about' },
-            // '/reset': { page: '/reset' },
+            '/product': { page: '/product' },
             // '/signup': { page: '/signup' },
             // '/offer': { page: '/offer' },
             // '/confirm': { page: '/confirm' },

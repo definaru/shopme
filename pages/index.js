@@ -17,8 +17,6 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { useMainStyles } from '../components/useStyles'
 import { Tutorial } from '../components/block/index/Tutorial'
 import SmoothScroll from 'smooth-scroll/dist/smooth-scroll'
-import EqualizerIcon from '@material-ui/icons/Equalizer'
-import TimelineIcon from '@material-ui/icons/Timeline'
 import GroupAddIcon from '@material-ui/icons/GroupAdd'
 
 
@@ -106,14 +104,9 @@ export default function IndexPage()
                   <Box>
                     <Grid container direction="row">
                       <Grid item xs={12} md={5}>
-                          <Link
-                            underline="none"
-                            href="/about"
-                          >
-                            <Button variant="contained" size="large" color="secondary">
-                              <CheckIcon /> &#160;Try all на 30 дней
-                            </Button>
-                          </Link>                     
+                        <Button variant="contained" component={Link} href="/about" noLinkStyle size="large" color="secondary">
+                            <CheckIcon /> &#160;Try all на 30 дней
+                        </Button>                    
                       </Grid>
                       <Grid item xs={12} md={7}>
                         <a data-scroll className="MuiLink-underlineNone" href="#learn_more">
@@ -126,9 +119,7 @@ export default function IndexPage()
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6}>
-                  
-              </Grid>            
+              <Grid item xs={12} sm={6} />            
             </Container>
           </Grid>
         </Container>

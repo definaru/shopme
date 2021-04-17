@@ -3,8 +3,7 @@ import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import { Box } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
-import ProTip from '../src/ProTip'
-import Link from '../src/Link'
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import Grid from '@material-ui/core/Grid'
 import { useMainStyles } from '../components/useStyles'
 import { Default } from '../components/layout/Default'
@@ -18,27 +17,49 @@ export default function AboutPage()
 
   return (
     <Default title={Title} classes={classes}>
-      <Container maxWidth="xl" component="main" className={classes.main}>
-        <Grid
-          container
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-          style={{height: '100vh'}}
-        >
-          <Container maxWidth="lg">
-            <Box sx={{ my: 4 }} mt={12}>
-              <Typography variant="h4" component="h1" gutterBottom>
-                Next.js v5-alpha example
-              </Typography>
-              <Button variant="contained" component={Link} noLinkStyle href="/">
-                Go to the main page
-              </Button>
-              <ProTip />
-            </Box>              
-          </Container>
-        </Grid>
-      </Container>
+        <Container maxWidth="lg" component="main" className={classes.main}>
+            <Grid
+                container
+                direction="row"
+                justify="space-between"
+                alignItems="center"
+                style={{height: '100vh'}}
+            >
+                <Grid item xs={6}>
+                    <Box p={3}>
+                        <Box pb={4}>
+                            <p><mark>{Title}</mark></p>
+                            <Typography variant="h3" colorprimary gutterBottom align="left">
+                                История появления программы
+                            </Typography>
+                            <Typography variant="p" gutterBottom align="left">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            </Typography> 
+                        </Box>
+                        <Box>
+                            <Grid container direction="row">
+                                <a data-scroll className="MuiLink-underlineNone" href="#more">
+                                    <Button variant="contained" size="large" color="secondary">
+                                        <KeyboardArrowRightIcon /> &#160;Подробнее
+                                    </Button>                           
+                                </a>
+                            </Grid>
+                        </Box>
+                    </Box>
+                </Grid>
+                <Grid item xs={6} align="right">
+                    <img 
+                      src="/img/shopping.svg" 
+                      style={{
+                        width: '90%', 
+                        padding: '60px 79px 0px 0px'
+                      }} 
+                      alt="Our Production" 
+                    />
+                </Grid>
+            </Grid>
+        </Container>
     </Default>
   )
 }
