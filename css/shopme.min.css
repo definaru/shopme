@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+body, html {
+    font-family: 'Play', sans-serif;
+}
+
+.dashboard {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 47px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #db2777;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #db2777;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+
+
+.form-tick:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    border-color: transparent;
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+/* Scrolling UI */
+.scroll::-webkit-scrollbar{width:5px;}
+.scroll::-webkit-scrollbar-thumb{    
+    border-width:1px 1px 1px 2px;    
+    border-color: #777;    
+    background-color: #999;    
+    margin-left: -5px;
+}
+.scroll::-webkit-scrollbar-thumb:hover{    
+    border-width: 1px 1px 1px 2px;    
+    border-color: #555;    
+    background-color: #777;
+}
+.scroll::-webkit-scrollbar-track{    
+    border-width:0;
+}
+.scroll::-webkit-scrollbar-track:hover{    
+    border-left: solid 1px #aaa;    
+    background-color: #eee;
+}

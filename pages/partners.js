@@ -1,0 +1,80 @@
+import React from 'react'
+import Link from 'next/link'
+import { IndexLayout } from '../components/layout/IndexLayout'
+import { FaQuoteLeft } from 'react-icons/fa'
+import { Featured } from '../components/block/partner/Featured'
+import { Marketplaces } from '../components/block/partner/Marketplaces'
+
+
+export default function Partners() 
+{
+
+    const Title = 'Документация'
+    const Description = '`Shop Me` Простой способ зарабатывать комиссионные. '
+
+    return (
+        <IndexLayout title={Title} description={Description}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+                <div className="flex justify-between mt-10">
+                    <div className="w-2/4 pr-10">
+                        <h1 className="font-bold text-gray-900 text-6xl mt-5">
+                            Партнерская экосистема и интеграции ShopMe
+                        </h1>
+                        <p className="text-md text-gray-700 py-14">
+                            Мы сотрудничаем с ведущими технологическими 
+                            решениями и агентствами электронной коммерции, 
+                            чтобы помочь вам развивать ваш бизнес умнее, 
+                            быстрее и сильнее, чем когда-либо прежде.
+                        </p>
+                        <div className="flex">
+                            <div>
+                                <Link href="/signup">
+                                    <a className="bg-pink-600 text-gray-50 px-6 py-4 text-xl font-bold rounded mr-0 md:mr-4 border border-pink-600">
+                                        Стать партнёром
+                                    </a>                                    
+                                </Link>
+                            </div>
+                            <div>
+                                <a href="#" className="text-gray-800 bg-gray-50 px-6 py-4 text-xl font-semibold rounded border border-gray-100 hover:text-pink-600 hover:border-pink-600">
+                                    Узнать больше
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-2/4 relative">
+
+                        <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 block w-4/5 h-full float-right rounded">
+                            <img 
+                                src="/access/img/919436.jpg" 
+                                className="w-full shadow-2xl rounded opacity-20" 
+                                alt="..." 
+                            />                            
+                        </div>
+
+                        <div className="absolute z-30 top-80 right-52">
+                            <div className="bg-white bg-opacity-90 p-9 rounded-md shadow-xl w-96">
+                                <FaQuoteLeft className="text-pink-200 w-10 h-10 mb-5" />
+                                <small className="text-gray-900 text-sm">
+                                    "ShopMe легко интегрируется с Shopify. 
+                                    Нам было очень просто управлять заказами на подписку. 
+                                    К счастью, ShopMe сотрудничает со многими инструментами, 
+                                    которые мы используем, такими как ReCharge, Klaviyo, Yotpo и Brightpearl. 
+                                    ShopMe работает с нами рука об руку, 
+                                    разрабатывая новые API и обновляя технологии."
+                                </small>
+                                <p className="py-1 mt-4 block font-bold">Пабло Габатто</p>
+                                <p>
+                                    <small className="text-gray-500">
+                                        Менеджер по бизнес-операциям в Ample Foods
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <Featured />     
+            <Marketplaces />    
+        </IndexLayout>
+    )
+}
