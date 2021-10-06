@@ -14,7 +14,7 @@ export default function DetailProduct()
 {
     const router = useRouter()
     const { href } = router.query
-    const detailProduct = ProductData().filter(name => name.href.includes(href))[0]
+    const detailProduct = href ? ProductData().filter(name => name.href.includes(href))[0] : {} 
     const { id, image, title, type, vendor, stocks, SKU, price, quantity, variants } = detailProduct
     const Title = title
 

@@ -16,6 +16,7 @@ module.exports = {
             '/dashboard/addtask': { page: '/dashboard/addtask' },
             '/dashboard/profile': { page: '/dashboard/profile' },
             '/dashboard/account': { page: '/dashboard/account' },
+            '/dashboard/product': { page: '/dashboard/product' },
             '/dashboard/apps': { page: '/dashboard/apps' },
             '/dashboard': { page: '/dashboard' },            
             '/reset-password': { page: '/reset-password' },
