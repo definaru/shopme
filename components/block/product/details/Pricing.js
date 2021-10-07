@@ -6,7 +6,7 @@ import { GetCard } from '../../../ui/card/GetCard'
 
 export function Pricing(props) 
 {
-    const InputClass = 'px-4 py-2 rounded border border-gray-200 w-full focus:border-gray-300 focus:outline-none'
+    const InputClass = 'px-4 py-2 border border-gray-200 focus:border-gray-300 focus:outline-none'
 
     return (
         <>
@@ -22,9 +22,9 @@ export function Pricing(props)
                             type="text" 
                             placeholder="Например. 348121032" 
                             value={props.details.price}
-                            className={InputClass}
+                            className={InputClass+' rounded-l-md border-r-0 w-4/6'}
                         /> 
-                        <select className={InputClass}>
+                        <select className={InputClass+' rounded-r-md w-2/6'}>
                             <option value="USD">USD</option>
                             <option value="AED">AED</option>
                             <option value="AFN">AFN</option>

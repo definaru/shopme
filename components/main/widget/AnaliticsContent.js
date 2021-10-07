@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import React, { useState } from 'react'
 import { FiTrendingUp, FiTrendingDown } from 'react-icons/fi'
+import CountUp from 'react-countup'
 
 
 export function AnaliticsContent() 
@@ -286,8 +287,16 @@ export function AnaliticsContent()
             <div className="p-4 bg-white rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
-                        <p className="text-gray-400 font-thin text-md">TOTAL USERS</p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">72,540</h4>                                    
+                        <p className="text-gray-400 font-thin text-md uppercase">
+                            Пользователей{/* TOTAL USERS */}
+                        </p>
+                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                            <CountUp
+                                end={72540} 
+                                duration={4}
+                                separator=","
+                            />
+                        </h4>                                    
                     </div>
                     <div className="w-2/4">
                         <Chart 
@@ -302,7 +311,14 @@ export function AnaliticsContent()
                 <small className="text-gray-400">
                     <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 mr-2">
                         <small className="flex items-center gap-1 text-green-600">
-                            <FiTrendingUp /> 12.5%
+                            <FiTrendingUp />
+                            <CountUp
+                                end={12.5} 
+                                duration={5}
+                                decimals={1}
+                                decimal="."
+                                suffix="%"
+                            />
                         </small>
                     </span> from 70,104
                 </small>
@@ -310,8 +326,19 @@ export function AnaliticsContent()
             <div className="p-4 bg-white rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
-                        <p className="text-gray-400 font-thin text-md">SESSIONS</p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">29.4%</h4>                                    
+                        <p className="text-gray-400 font-thin text-md uppercase">
+                            Сеансы{/* SESSIONS */}
+                        </p>
+                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                            <CountUp
+                                end={56.9} 
+                                duration={5}
+                                decimals={1}
+                                decimal="."
+                                suffix="%"
+                                //separator=","
+                            />
+                        </h4>                                    
                     </div>
                     <div className="w-2/4">
                         <Chart 
@@ -326,7 +353,15 @@ export function AnaliticsContent()
                 <small className="text-gray-400">
                     <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 mr-2">
                         <small className="flex items-center gap-1 text-green-600">
-                            <FiTrendingUp /> 1.7%
+                            <FiTrendingUp /> 
+                            <CountUp
+                                end={6.5} 
+                                duration={6}
+                                decimals={1}
+                                decimal="."
+                                suffix="%"
+                                //separator=","
+                            />
                         </small>
                     </span> from 29.1%
                 </small>
@@ -334,8 +369,19 @@ export function AnaliticsContent()
             <div className="p-4 bg-white rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
-                        <p className="text-gray-400 font-thin text-md">CLICK RATE</p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">56.8%</h4>                                    
+                        <p className="text-gray-400 font-thin text-md uppercase">
+                            Посещаемость{/* CLICK RATE */}
+                        </p>
+                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                            <CountUp
+                                end={56.8} 
+                                duration={7}
+                                decimals={1}
+                                decimal="."
+                                suffix="%"
+                                //separator=","
+                            />
+                        </h4>                                    
                     </div>
                     <div className="w-2/4">
                         <Chart 
@@ -350,7 +396,15 @@ export function AnaliticsContent()
                 <small className="text-gray-400">
                     <span className="inline-block text-sm px-2 py-0 rounded bg-red-100 mr-2">
                         <small className="flex items-center gap-1 text-red-600">
-                            <FiTrendingDown /> 4.4%
+                            <FiTrendingDown /> 
+                            <CountUp
+                                end={4.4}
+                                duration={5}
+                                decimals={1}
+                                decimal="."
+                                prefix="-"
+                                suffix="%"
+                            />
                         </small>
                     </span> from 61.2%
                 </small>
@@ -358,8 +412,16 @@ export function AnaliticsContent()
             <div className="p-4 bg-white rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
-                        <p className="text-gray-400 font-thin text-md">PAGEVIEWS</p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">92,913</h4>                                    
+                        <p className="text-gray-400 font-thin text-md uppercase">
+                            Просмотры{/* PAGEVIEWS */}
+                        </p>
+                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                            <CountUp
+                                end={92913} 
+                                duration={8}
+                                separator=","
+                            />
+                        </h4>                                    
                     </div>
                     <div className="w-2/4">
                         <Chart 

@@ -8,6 +8,7 @@ import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon } from '@heroicons/react/outl
 import { FaEye } from 'react-icons/fa'
 import { ProductInformation } from '../../../components/block/product/details/ProductInformation'
 import { Pricing } from '../../../components/block/product/details/Pricing'
+import { BreadCrumbs } from '../../../components/ui/page/BreadCrumbs'
 
 
 export default function DetailProduct() 
@@ -17,16 +18,14 @@ export default function DetailProduct()
     const detailProduct = href ? ProductData().filter(name => name.href.includes(href))[0] : {} 
     const { id, image, title, type, vendor, stocks, SKU, price, quantity, variants } = detailProduct
     const Title = title
+    const variable = [
+        {href: '/dashboard/product', name: 'Products'}
+    ]
 
     return (
         <MainLayout title={Title}>
             <div className="w-full block">
-                <div className="flex text-xs pt-5 pb-2 space-x-1">
-                    <Link href="/dashboard/product">
-                        <a className="no-underline hover:underline text-gray-500">Products</a>
-                    </Link>
-                    <span> / Product details</span>
-                </div>
+                <BreadCrumbs home={true} links={variable} end="Product details" />
                 <div className="flex items-center justify-between pb-5 border-b border-gray-100 mb-5">
                     <div className="flex flex-col">
                         <h1 className="text-3xl font-bold text-gray-900">

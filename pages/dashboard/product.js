@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { MainLayout } from '../../components/layout/MainLayout'
 import { PriceFormat } from '../../components/helper/digital/PriceFormat'
@@ -9,12 +9,36 @@ import { FaPen } from 'react-icons/fa'
 import { DropdownMenu } from '../../components/ui/dropdown/DropdownMenu'
 import { Table } from '../../components/ui/table/Table'
 import { ProductData } from '../../components/data/ProductData'
+import { TrashIcon, ArchiveIcon, RefreshIcon, XIcon } from '@heroicons/react/outline'
 
 
 export default function Product() 
 {
     const Title = 'Продукты'
     const Product = ProductData()
+    const [tabs, setTabs] = useState('All products')
+    const Menus = [
+        {
+            header: 'Delete',
+            href: `/delete/`,
+            icon: TrashIcon
+        },
+        {
+            header: 'Archive',
+            href: `/archive/`,
+            icon: ArchiveIcon
+        },
+        {
+            header: 'Upload',
+            href: `/upload/`,
+            icon: RefreshIcon
+        },
+        {
+            header: 'Unpublish',
+            href: `/unpublish/`,
+            icon: XIcon
+        }
+    ]
 
     return (
         <MainLayout title={`${Title} | ShopMe`}>
@@ -50,11 +74,22 @@ export default function Product()
             </div> 
             <div className="w-full h-screen block">
                 <div className="flex justify-between border-b">
-                    <div className="flex font-bold">
-                        <div className="px-7 py-3 border-b-4 border-pink-600 cursor-pointer">All products</div>
-                        <div className="px-7 py-3 border-b-4 border-transparent hover:border-gray-200 cursor-pointer">Archived</div>
-                        <div className="px-7 py-3 border-b-4 border-transparent hover:border-gray-200 cursor-pointer">Publish</div>
-                        <div className="px-7 py-3 border-b-4 border-transparent hover:border-gray-200 cursor-pointer">Unpublish</div>                        
+                    <div className="flex">
+                        {['All products', 'Archived', 'Publish', 'Unpublish'].map((item, i) => (
+                            <div 
+                                key={i} 
+                                onClick={() => setTabs(item)}
+                                className={`
+                                    px-7 py-3 border-b-4 cursor-pointer 
+                                    ${tabs === item ? 
+                                        'border-pink-600 font-bold' : 
+                                        'border-transparent hover:border-gray-200 font-medium'
+                                    }
+                                `}
+                            >
+                                {item}
+                            </div>
+                        ))}
                     </div>
                     <div className="flex">
                         <div className="px-4 py-1 flex items-center space-x-2 bg-white border border-gray-100 rounded-l-md">
@@ -164,6 +199,7 @@ export default function Product()
                                         </a>
                                         <DropdownMenu 
                                             options={<MdMoreVert className="w-6 h-6" />} 
+                                            lists={Menus}
                                             link={item.id}
                                         />
                                     </div>

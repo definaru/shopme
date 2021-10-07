@@ -11,6 +11,8 @@ import { DropdownSelect } from '../../components/ui/dropdown/DropdownSelect'
 import { TableUser } from '../../components/ui/table/widget/TableUser'
 import { Transactions } from '../../components/block/index/Transactions'
 import { ReportsOverview } from '../../components/block/index/ReportsOverview'
+import { DropdownMenu } from '../../components/ui/dropdown/DropdownMenu'
+import { MdFileDownload, MdQuestionAnswer, MdShare, MdRepeat } from 'react-icons/md'
 
 
 export default function Index() 
@@ -71,6 +73,34 @@ export default function Index()
             user_id: '85214'
         }
     ]
+    const Menus = [
+        {
+            title: 'SETTINGS'         
+        },
+        {
+            header: 'Share chart',
+            href: '#',
+            icon: MdShare            
+        },
+        {
+            header: 'Download',
+            href: '#',   
+            icon: MdFileDownload         
+        },
+        {
+            header: 'Connect other apps',
+            href: '#',   
+            icon: MdRepeat         
+        },
+        {
+            title: 'FEEDBACK'
+        },
+        {
+            header: 'Report',
+            href: '#',
+            icon: MdQuestionAnswer
+        }
+    ]
 
     return (
         <MainLayout title={`${Title} | ShopMe`}>
@@ -86,7 +116,7 @@ export default function Index()
                             <a className="table px-10 py-4 rounded bg-pink-600 hover:bg-pink-700 text-md text-yellow-50">
                                 <div className="flex items-center gap-2 font-semibold">
                                     <FiPlus className="text-white w-5 h-5" />
-                                     <span>Добавить задачу{/*Add Task*/}</span> 
+                                     <span>Создать проект</span> 
                                 </div>
                             </a>
                         </Link>
@@ -98,16 +128,18 @@ export default function Index()
                         <div className="flex flex-col">
                             <div className="flex items-center justify-between p-4 border-b border-gray-50">
                                 <h4 className="font-semibold text-md">Импортировать данные в ShopMe</h4>
-                                <div className="bg-white relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center">
-                                    <FiMoreVertical />
-                                </div>
+                                <DropdownMenu 
+                                    options={<FiMoreVertical className="w-5 h-5" />} 
+                                    lists={Menus}
+                                    style='relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center'
+                                />
                             </div>                                
                             <div className="p-4">
                                 <p className="text-sm text-gray-400">
                                     Смотрите и разговаривайте со своими пользователями и лидерами сразу, 
                                     импортируя свои данные на платформу ShopMe.
                                 </p>
-                                <div className="flex flex-col mt-8">
+                                <div className="flex flex-col mt-4">
                                     <div className="py-4 border-b">
                                         <h4 className="font-semibold text-md">Import users from:</h4>
                                     </div>
@@ -140,27 +172,27 @@ export default function Index()
                         <div className="flex space-x-2">
                             <div className="flex space-x-2">
                                 <div className="flex items-center">
-                                    <p className="pr-3 text-gray-500 text-sm">Status:</p>
+                                    <p className="pr-3 text-gray-500 text-sm">Статус:</p>
                                     <DropdownSelect 
                                         style='px-3 py-2 text-sm space-x-2 bg-white border border-gray-50 rounded'
                                         arrow={true}
                                         list={
                                         [
-                                            {header: 'All'},
-                                            {header: 'Successful'},
-                                            {header: 'Overdue'},
-                                            {header: 'Pending'}
+                                            {header: 'Все'},
+                                            {header: 'Успешные'},
+                                            {header: 'Заблокированы'},
+                                            {header: 'Ожидают'}
                                         ]
                                     } />
-                                    <p className="px-3 text-gray-500 text-sm">Signed up:</p>
+                                    <p className="px-3 text-gray-500 text-sm">Зарегистрирован:</p>
                                     <DropdownSelect 
                                         style='px-3 py-2 text-sm space-x-2 bg-white border border-gray-50 rounded'
                                         arrow={true}
                                         list={
                                         [
-                                            {header: 'All'},
-                                            {header: '1 year ago'},
-                                            {header: '6 months ago'}
+                                            {header: 'Весь период'},
+                                            {header: '1 год назад'},
+                                            {header: '6 месяцев назад'}
                                         ]
                                     } />
                                 </div>
@@ -170,7 +202,7 @@ export default function Index()
                                 <input 
                                     type="search" 
                                     name="search" 
-                                    placeholder="Search users..." 
+                                    placeholder="Поиск..." 
                                     className="placeholder-gray-300 bg-transparent focus:outline-none text-sm"
                                 />
                             </div>
@@ -179,11 +211,11 @@ export default function Index()
                     <Table 
                         action={false}
                         thead={[
-                            {name: 'FULL NAME'},
-                            {name: 'STATUS'},
-                            {name: 'TYPE'},
-                            {name: 'EMAIL'},
-                            {name: 'SIGNED UP'},
+                            {name: 'Ф.И.О.'},
+                            {name: 'СТАТУС'},
+                            {name: 'ТИП'},
+                            {name: 'E-MAIL'},
+                            {name: 'Зарегистрирован'},
                             {name: 'USER ID'}
                         ]}
                     >
