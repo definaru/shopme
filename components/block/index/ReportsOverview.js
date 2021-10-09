@@ -1,15 +1,60 @@
 import React from 'react'
 import { FaCircle } from 'react-icons/fa'
 import { GetCard } from '../../ui/card/GetCard'
+import { MdFileDownload, MdQuestionAnswer, MdShare, MdRepeat } from 'react-icons/md'
+import { FiMoreVertical } from 'react-icons/fi'
+import { DropdownMenu } from '../../ui/dropdown/DropdownMenu'
+
 
 export function ReportsOverview() 
 {
+
+    const Menus = [
+        {
+            title: 'SETTINGS'         
+        },
+        {
+            header: 'Share chart',
+            href: '#',
+            icon: MdShare            
+        },
+        {
+            header: 'Download',
+            href: '#',   
+            icon: MdFileDownload         
+        },
+        {
+            header: 'Connect other apps',
+            href: '#',   
+            icon: MdRepeat         
+        },
+        {
+            title: 'FEEDBACK'
+        },
+        {
+            header: 'Report',
+            href: '#',
+            icon: MdQuestionAnswer
+        }
+    ]
+
+    function Select(props) {
+        // {props.toWhat}
+        return (
+            <DropdownMenu
+                options={<FiMoreVertical className="w-5 h-5" />} 
+                lists={Menus}
+                style='relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center'
+            />
+        )
+    }
     return (
         <>
             <GetCard 
                 header="Обзор отчетов"
-                headstyle="p-4" 
-                headWidget={<div>...</div>}
+                headstyle="px-4 py-2" 
+                headWidget={<Select />}
+                style="px-4 pt-4"
             >
                 <h2 className="text-2xl font-bold py-3">7,431.14 ₽ RUB</h2>
                 <div className="relative overflow-hidden w-full h-3 rounded-full bg-pink-50 my-2">

@@ -13,7 +13,9 @@ import { Transactions } from '../../components/block/index/Transactions'
 import { ReportsOverview } from '../../components/block/index/ReportsOverview'
 import { DropdownMenu } from '../../components/ui/dropdown/DropdownMenu'
 import { MdFileDownload, MdQuestionAnswer, MdShare, MdRepeat } from 'react-icons/md'
-
+import { ShopCard } from '../../components/ui/card/ShopCard'
+import { CardSum } from '../../components/ui/card/CardSum'
+import { FaReceipt, FaRegHandshake } from 'react-icons/fa'
 
 export default function Index() 
 {
@@ -101,6 +103,29 @@ export default function Index()
             icon: MdQuestionAnswer
         }
     ]
+    
+    const features = [
+        {
+            id: 1,
+            icon: FaReceipt,
+            price: 4560,
+            preffix: '₽',
+            color: 'text-green-500',
+            background: 'bg-green-100',
+            text: 'Получено за этот месяц',
+            action: 'hide0'
+        },
+        {
+            id: 2,
+            icon: FaRegHandshake,
+            price: 520,
+            preffix: '',
+            color: 'text-indigo-500',
+            background: 'bg-indigo-100',
+            text: 'Новых клиентов',
+            action: 'hide1'
+        }
+    ]
 
     return (
         <MainLayout title={`${Title} | ShopMe`}>
@@ -122,6 +147,23 @@ export default function Index()
                         </Link>
                     </div>
                 </div>
+                <div className="grid grid-cols-3 gap-6 mb-6">
+                    <div><ShopCard /></div>
+                    <div>
+                        <ShopCard 
+                            header="Партнёрская программа" 
+                            image="/access/img/photo-1556740738-b6a63e27c4df.jpg"
+                            link="/dashboard/affiliate"
+                            button="Настроить"
+                            opacity="opacity-30"
+                            icon={false} 
+                        />
+                    </div>
+                    <div className="grid gap-4">
+                        <CardSum list={features} />
+                    </div>
+                </div>
+                
                 <AnaliticsContent />
                 <div className="grid grid-cols-12 gap-5 my-5">
                     <div className="col-span-5 bg-white rounded shadow-sm">

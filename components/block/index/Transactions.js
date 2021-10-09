@@ -7,9 +7,8 @@ import { TransactionsCard } from '../../ui/card/TransactionsCard'
 export function Transactions() 
 {
 
-    function Calendar(props) {
+    function Calendar() {
         const date = new Date().toLocaleDateString('ru')
-        // {props.toWhat}
         return (
             <div className="flex items-center space-x-2 text-sm">
                 <CalendarIcon className="w-4 h-4 text-gray-400" /> 
@@ -69,7 +68,7 @@ export function Transactions()
             <GetCard 
                 header="Последние транзакции"
                 headstyle="p-4" 
-                headWidget={<Calendar toWhat="Мир" />}
+                headWidget={<Calendar />}
                 style="p-0"
             >
                 {List.map((item, i) => 

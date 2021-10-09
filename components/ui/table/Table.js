@@ -13,7 +13,7 @@ export function Table({children, thead = [], action = true})
                         <thead className="bg-gray-100">
                             <th className="p-4 w-12">
                                 <div>
-                                    <label>
+                                    <label className="flex justify-center items-center">
                                         <input 
                                             type="checkbox" 
                                             className={CheckboxClass} 

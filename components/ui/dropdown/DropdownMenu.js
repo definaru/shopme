@@ -7,6 +7,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 export function DropdownMenu({
     options = 'Select', 
     arrow = false, 
+    func = '',
     style = 'border rounded-r-md px-3 py-2 w-full bg-white',
     link = 0,
     lists = []
@@ -31,7 +32,7 @@ export function DropdownMenu({
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="origin-top-right absolute right-0 mt-1 w-48 rounded-md shadow-lg bg-white z-20 focus:outline-none">
+                <Menu.Items className="origin-top-right absolute right-0 mt-0 w-48 rounded-md shadow-lg bg-white z-20 focus:outline-none">
                     <div className="py-1">
                         {lists.map((item, i) => (
                         <React.Fragment key={i}>
@@ -40,12 +41,17 @@ export function DropdownMenu({
                                 {item.title}
                             </div> : 
                             <Menu.Item>
+                                {func ? 
+                                <div onClick={func} className="group cursor-pointer bg-transparent flex items-center space-x-2 hover:bg-gray-100 text-gray-600 hover:text-gray-900 px-5 py-2 text-sm">
+                                    {item.icon ? <item.icon className="w-4 h-4 text-gray-400 group-hover:text-pink-600" /> : ''}
+                                    <span>{item.header}</span>
+                                </div> :
                                 <Link href={item.href+link}>
                                     <a className="group bg-transparent flex items-center space-x-2 hover:bg-gray-100 text-gray-600 hover:text-gray-900 px-5 py-2 text-sm">
                                         {item.icon ? <item.icon className="w-4 h-4 text-gray-400 group-hover:text-pink-600" /> : ''}
                                         <span>{item.header}</span>
                                     </a>
-                                </Link>
+                                </Link>}
                             </Menu.Item>}
                         </React.Fragment>
                         ))}
