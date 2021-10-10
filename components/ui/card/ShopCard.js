@@ -18,7 +18,7 @@ export function ShopCard({
         <Link href={link}>
             <a className="w-full relative">
                 <div className="overflow-hidden bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 block w-full h-60 rounded-md">
-                    <img src={image} class={`w-full h-60 object-cover object-center rounded-md ${opacity}`} alt="..." />
+                    <img src={image} className={`w-full h-60 object-cover object-center rounded-md ${opacity}`} alt="..." />
                     <div className="absolute top-8 left-8 w-80">
                         {icon ? <GiShoppingCart className="w-14 h-14 text-gray-900 mb-2" /> : <div className="h-7" />}
                         <h2 className="block font-bold text-white text-3xl mb-4">

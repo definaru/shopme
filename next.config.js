@@ -17,6 +17,7 @@ module.exports = {
             '/dashboard/profile': { page: '/dashboard/profile' },
             '/dashboard/account': { page: '/dashboard/account' },
             '/dashboard/product': { page: '/dashboard/product' },
+            '/dashboard/shop': { page: '/dashboard/shop' },
             '/dashboard/apps': { page: '/dashboard/apps' },
             '/dashboard': { page: '/dashboard' },            
             '/reset-password': { page: '/reset-password' },
