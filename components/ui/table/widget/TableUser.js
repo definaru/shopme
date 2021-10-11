@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link'
 import { GetStatus } from '../../../helper/status/GetStatus'
 import { GetAvatar } from '../../avatar/GetAvatar'
+
 
 export function TableUser({list = []}) 
 {
@@ -17,14 +19,16 @@ export function TableUser({list = []})
                         </label>
                     </td>
                     <td className="px-5 py-2 pl-0 whitespace-nowrap text-sm text-gray-600">
-                        <a className="flex items-center mr-5" href={item.user.href}>
-                            <GetAvatar item={item} />
-                            <div className="font-bold px-3">
-                                <h5 className="text-gray-500 hover:text-pink-600 text-sm mb-0">
-                                    {item.user.name}
-                                </h5>
-                            </div>
-                        </a>
+                        <Link href="/dashboard/user/[href]" as={`/dashboard/user/${item.user_id}`}>
+                            <a className="flex items-center mr-5">
+                                <GetAvatar item={item} />
+                                <div className="font-bold px-3">
+                                    <h5 className="text-gray-500 hover:text-pink-600 text-sm mb-0">
+                                        {item.user.name}
+                                    </h5>
+                                </div>
+                            </a>
+                        </Link>
                     </td>
                     <td className="px-5 py-2 whitespace-nowrap text-sm text-gray-500">
                         <GetStatus status={item.status} point={true} />

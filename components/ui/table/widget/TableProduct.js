@@ -9,7 +9,7 @@ import { DropdownMenu } from '../../dropdown/DropdownMenu'
 export function TableProduct({list = [], dropdown = []}) 
 {
     return (
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody className="bg-white divide-y divide-gray-200">
         {list.map((item, index) => (
             <tr key={index} className="border-b border-gray-50 bg-transparent hover:bg-gray-50">
                 <td className="px-5 py-2 whitespace-nowrap text-sm text-gray-500">
@@ -45,9 +45,9 @@ export function TableProduct({list = [], dropdown = []})
                     </a>
                 </td>
                 <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
-                    <label class="switch">
+                    <label className="switch">
                         <input type="checkbox" defaultChecked={item.stocks} />
-                        <span class="slider round"></span>
+                        <span className="slider round"></span>
                     </label>
                 </td>
                 <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">

@@ -8,7 +8,7 @@ import { ShopContext } from '../../context/ShopContext'
 
 export function AvatarContent() 
 {
-    const { setUser } = useContext(ShopContext)
+    const { user, setUser } = useContext(ShopContext)
     const ClassStyle = 'text-gray-600 hover:text-pink-600 hover:bg-gray-50 flex rounded-md items-center w-full px-2 py-2 text-sm'
 
     return (
@@ -16,8 +16,8 @@ export function AvatarContent()
             <div>
                 <Menu.Button className="focus:outline-none">
                     <img 
-                        src="https://randomuser.me/api/portraits/women/88.jpg" 
-                        alt="Nuria Cabrera" 
+                        src={user.avatar} 
+                        alt={user.username+' '+user.lastname} 
                         className="object-cover object-center border-4 border-gray-100 w-10 h-10 rounded-full cursor-pointer" 
                     />
                     <FaCircle className="text-green-600 w-3 h-3 absolute bottom-1 right-1 border-2 border-white rounded-full" />
@@ -39,8 +39,8 @@ export function AvatarContent()
                                 <Link href="/dashboard/profile">
                                     <a>
                                         <img 
-                                            src="https://randomuser.me/api/portraits/women/88.jpg" 
-                                            alt="Nuria Cabrera" 
+                                            src={user.avatar} 
+                                            alt={user.username+' '+user.lastname}  
                                             className="object-cover object-center border-4 border-gray-100 w-12 h-12 rounded-full" 
                                         />                                        
                                     </a>
@@ -49,12 +49,12 @@ export function AvatarContent()
                             <div className="flex flex-col text-sm">
                                 <Link href="/dashboard/profile">
                                     <a className="font-semibold no-underline hover:underline text-gray-900 hover:text-gray-600">
-                                        Nuria Cabrera
+                                        {user.username+' '+user.lastname} 
                                     </a>
                                 </Link>
                                 <p className="overflow-ellipsis overflow-hidden block w-36 text-gray-400">
                                     <small>
-                                        nuria.cabrera.guillot@example.com
+                                        {user.email} 
                                     </small>
                                 </p>
                             </div>

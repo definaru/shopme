@@ -16,65 +16,14 @@ import { MdFileDownload, MdQuestionAnswer, MdShare, MdRepeat } from 'react-icons
 import { ShopCard } from '../../components/ui/card/ShopCard'
 import { CardSum } from '../../components/ui/card/CardSum'
 import { FaReceipt, FaRegHandshake } from 'react-icons/fa'
+import { UserList } from '../../components/data/UserList'
+
 
 export default function Index() 
 {
 
     const Title = 'Dashboard'
-    const Lists = [
-        {
-            id: 1,
-            user: {
-                image: 'https://htmlstream.com/front-dashboard/assets/img/160x160/img10.jpg',
-                name: 'Amanda Harvey',
-                href: '#'
-            },
-            status: 'Successful',
-            type: 'Unassigned',
-            email: 'amanda@example.com',
-            signed: '1 year ago',
-            user_id: '67989'
-        },
-        {
-            id: 2,
-            user: {
-                image: '',
-                name: 'Anne Richard',
-                href: '#'
-            },
-            status: 'Successful',
-            type: 'Subscription',
-            email: 'anne@example.com',
-            signed: '6 months ago',
-            user_id: '67326'
-        },
-        {
-            id: 3,
-            user: {
-                image: 'https://htmlstream.com/front-dashboard/assets/img/160x160/img3.jpg',
-                name: 'David Harrison',
-                href: '#'
-            },
-            status: 'Overdue',
-            type: 'Non-subscription',
-            email: 'david@example.com',
-            signed: '6 months ago',
-            user_id: '55821'
-        },
-        {
-            id: 4,
-            user: {
-                image: 'https://htmlstream.com/front-dashboard/assets/img/160x160/img5.jpg',
-                name: 'Finch Hoot',
-                href: '#'
-            },
-            status: 'Pending',
-            type: 'Subscription',
-            email: 'finch@example.com',
-            signed: '1 year ago',
-            user_id: '85214'
-        }
-    ]
+    const Lists = UserList()
     const Menus = [
         {
             title: 'SETTINGS'         
@@ -251,6 +200,9 @@ export default function Index()
                         </div>
                     </div>
                     <Table 
+                        margin='pb-0'
+                        mousewheel={false}
+                        border=''
                         action={false}
                         thead={[
                             {name: 'Ф.И.О.'},

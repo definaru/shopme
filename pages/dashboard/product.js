@@ -8,11 +8,7 @@ import { Table } from '../../components/ui/table/Table'
 import { ProductData } from '../../components/data/ProductData'
 import { TrashIcon, ArchiveIcon, RefreshIcon, XIcon } from '@heroicons/react/outline'
 import { TableProduct } from '../../components/ui/table/widget/TableProduct'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Scrollbar, Mousewheel } from 'swiper/core'
 import { CardGridProduct } from '../../components/ui/card/CardGridProduct'
-SwiperCore.use([Scrollbar, Mousewheel])
 
 
 export default function Product() 
@@ -129,27 +125,20 @@ export default function Product()
                             </div>
                         </div>
                         {design === 'list' ?
-                        <div className="w-full overflow-hidden">
-                            <Swiper scrollbar={{"hide": false}} mousewheel={true}>
-                                <SwiperSlide className="pb-40">
-                                    <Table
-                                        thead={[
-                                            {name: 'Product'},
-                                            {name: 'Type'},
-                                            {name: 'Vendor'},
-                                            {name: 'Stocks'},
-                                            {name: 'SKU'},
-                                            {name: 'Price'},
-                                            {name: 'Quantity'},
-                                            {name: 'Variants'}
-                                        ]}
-                                    >
-                                        <TableProduct list={Product} dropdown={Menus} />
-                                    </Table>
-                                </SwiperSlide>
-                                <SwiperSlide />
-                            </Swiper>                        
-                        </div> : ''}
+                        <Table
+                            thead={[
+                                {name: 'Product'},
+                                {name: 'Type'},
+                                {name: 'Vendor'},
+                                {name: 'Stocks'},
+                                {name: 'SKU'},
+                                {name: 'Price'},
+                                {name: 'Quantity'},
+                                {name: 'Variants'}
+                            ]}
+                        >
+                            <TableProduct list={Product} dropdown={Menus} />
+                        </Table> : ''}
                     </div>
                     {design === 'grid' ? <CardGridProduct list={Product} dropdown={Menus} /> : ''}
                 </div>                

@@ -17,6 +17,8 @@ module.exports = {
             '/dashboard/profile': { page: '/dashboard/profile' },
             '/dashboard/account': { page: '/dashboard/account' },
             '/dashboard/product': { page: '/dashboard/product' },
+            '/dashboard/affiliate': { page: '/dashboard/affiliate' },
+            '/dashboard/ecommerce': { page: '/dashboard/ecommerce' },
             '/dashboard/shop': { page: '/dashboard/shop' },
             '/dashboard/apps': { page: '/dashboard/apps' },
             '/dashboard': { page: '/dashboard' },            

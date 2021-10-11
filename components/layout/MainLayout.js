@@ -5,13 +5,15 @@ import { Header } from '../main/Header'
 import { NavBar } from '../main/widget/NavBar'
 import { ShopContext } from '../context/ShopContext'
 import Cookie from 'js-cookie'
+import { User } from '../data/User'
 
 
 export function MainLayout({children, title = 'Page', description = '...'}) 
 {
 
     const router = useRouter()
-    const [user, setUser] = useState('')
+    const curr_user = User()
+    const [user, setUser] = useState(curr_user)
     const [open, setOpen] = useState(false)
     const [menu, setMenu] = useState(false)
     const [cookie, setSookie] = useState(null)
@@ -67,9 +69,7 @@ export function MainLayout({children, title = 'Page', description = '...'})
                 <meta name="description" content={description} />
 			</Head>
             <div className="dashboard bg-gray-50 block h-full">
-                <Header 
-                //setUser={setUser} open={open} setOpen={setOpen} 
-                />
+                <Header />
                 <div className="flex flex-row">
                     <NavBar />
                     <div className="w-full bg-gray-50 h-full block py-16 px-8">
