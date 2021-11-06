@@ -8,7 +8,7 @@ export function BreadCrumbs({home = false, links = [], end = '...'})
     const LinkClass = 'no-underline hover:underline text-gray-500'
 
     return (
-        <div className="flex text-xs pt-5 pb-2 space-x-1">
+        <div className="flex text-xs pt-5 pb-2 space-x-1 text-gray-900 dark:text-gray-300">
             {home ? 
             <>
                 <Link href="/dashboard">

@@ -299,7 +299,7 @@ export function MonthlyExpenses()
             annotations: {
               yaxis: [{
                 y: 30,
-                borderColor: '#999',
+                borderColor: '#ddd',
                 label: {
                   show: true,
                   text: 'Support',
@@ -310,8 +310,8 @@ export function MonthlyExpenses()
                 }
               }],
               xaxis: [{
-                x: new Date('14 Nov 2012').getTime(),
-                borderColor: '#999',
+                x: new Date('14 Nov 2013').getTime(),
+                borderColor: '#ddd', // #999
                 yAxisIndex: 0,
                 label: {
                   show: true,
@@ -345,7 +345,7 @@ export function MonthlyExpenses()
               gradient: {
                 shadeIntensity: 1,
                 opacityFrom: 0.7,
-                opacityTo: 0.9,
+                opacityTo: 0.1,
                 stops: [0, 100]
               }
             },
@@ -355,11 +355,11 @@ export function MonthlyExpenses()
 
     return (
         <>
-            <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-gray-50">
-                <h4 className="font-semibold text-md">Месячные расходы</h4>
-                <div className="flex bg-gray-50 rounded p-1 place-items-center">
-                     <div className="text-sm py-2 px-4 rounded bg-white shadow">На этой неделе{/*This week */}</div>
-                     <div className="text-sm py-2 px-4 rounded bg-transparent">Прошлая неделя{/*Last week*/}</div> 
+            <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-gray-50 dark:border-gray-800">
+                <h4 className="font-semibold text-md text-gray-900 dark:text-gray-100">Месячные расходы</h4>
+                <div className="flex bg-gray-50 dark:bg-black rounded p-1 place-items-center">
+                     <div className="text-sm py-2 px-4 rounded bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 shadow">На этой неделе{/*This week */}</div>
+                     <div className="text-sm py-2 px-4 rounded bg-transparent text-gray-900 dark:text-gray-50">Прошлая неделя{/*Last week*/}</div> 
                 </div>
             </div>
             <div className="p-4">

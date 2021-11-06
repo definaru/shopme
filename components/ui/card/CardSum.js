@@ -28,7 +28,7 @@ export function CardSum({list = []})
     return (
         <>
             {lists.map((items, i) => (
-                <div key={i} className="flex justify-between bg-white shadow-sm rounded-md px-5 py-4 relative h-28">
+                <div key={i} className="flex justify-between bg-white dark:bg-gray-900 shadow-sm rounded-md px-5 py-4 relative h-28">
                     <div className="flex items-center">
                         <div className="pr-4">
                             <div className={`rounded-full w-16 h-16 cursor-pointer grid place-items-center ${items.background} focus:outline-none`}>
@@ -36,16 +36,15 @@ export function CardSum({list = []})
                             </div>
                         </div>
                         <div className="flex-1">
-                            <h3 className="text-3xl font-bold mb-0.5">{PriceFormat(items.price)} {items.preffix}</h3>
+                            <h3 className="text-3xl font-bold mb-0.5 text-gray-900 dark:text-gray-50">{PriceFormat(items.price)} {items.preffix}</h3>
                             <p className="font-medium text-gray-500 text-sm">
                                 {items.text}
                             </p>
-                            
                         </div>
                     </div>
                     <div className="flex-none">
                         <DropdownMenu 
-                            options={<FiMoreVertical className="w-5 h-5" />} 
+                            options={<FiMoreVertical className="w-5 h-5 dark:text-gray-50 text-gray-800" />} 
                             lists={Menus}
                             func={() => deleteActive(items.id)}
                             link={items.action}

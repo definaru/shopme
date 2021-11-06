@@ -1,12 +1,12 @@
-import React from 'react'
-import { FaRegQuestionCircle } from 'react-icons/fa'
+import React, { useContext } from 'react'
+import { ShopContext } from '../../../context/ShopContext'
 import { GetCard } from '../../../ui/card/GetCard'
+import { Label } from '../../../ui/form/label'
 
 
 export function ProductInformation(props) 
 {
-    const InputClass = 'px-4 py-2 rounded border border-gray-200 w-full focus:border-gray-300 focus:outline-none'
-
+    const {GlobalClass} = useContext(ShopContext)
     return (
         <>
             <GetCard 
@@ -15,6 +15,7 @@ export function ProductInformation(props)
                 style="p-4"
             >
                 <div className="grid grid-cols-12 gap-5">
+                    
                     <div class="col-span-3">
                         <img 
                             src={props.details.image} 
@@ -24,37 +25,31 @@ export function ProductInformation(props)
                     </div>
                     <div class="flex flex-col space-y-2 col-span-9">
                         <div>
-                            <label className="flex items-center space-x-2 mb-1 text-xs">
-                                <strong>Имя</strong> 
-                                <FaRegQuestionCircle 
-                                    className="text-gray-400 cursor-pointer" 
-                                    title="Продукты - товары или услуги, которые вы продаете." 
-                                />
-                            </label>
+                            <Label name="Имя" id="name" title="Продукты - товары или услуги, которые вы продаете." />
                             <input 
                                 type="text" 
                                 placeholder="Название товара..." 
-                                value={props.details.title}
-                                className={InputClass}
+                                defaultValue={props.details.title}
+                                className={GlobalClass().InputClass}
                             />                            
                         </div>
                         <div className="grid grid-cols-2 gap-5">
                             <div>
-                                <label className="font-semibold mb-1 text-xs">SKU</label>
+                                <Label name="SKU" />
                                 <input 
                                     type="text" 
                                     placeholder="Например. 348121032" 
-                                    value={props.details.SKU}
-                                    className={InputClass}
+                                    defaultValue={props.details.SKU}
+                                    className={GlobalClass().InputClass}
                                 /> 
                             </div>
                             <div>
-                                <label className="font-semibold mb-1 text-xs">Масса</label>
+                                <Label name="Масса" />
                                 <input 
                                     type="text" 
                                     placeholder="0,0" 
-                                    value={''}
-                                    className={InputClass}
+                                    defaultValue={''}
+                                    className={GlobalClass().InputClass}
                                 /> 
                                 <small className="text-gray-400 block mt-2 text-xs leading-tight">
                                 <p>Используется для расчета стоимости доставки при оформлении 
@@ -65,13 +60,12 @@ export function ProductInformation(props)
                     </div>
                     
                     <div class="col-span-12">
-                        <label className="font-semibold block mb-1 text-sm">
-                            Описание <small className="text-gray-400 font-normal">(необязательно)</small>
-                        </label>
+                        <Label name="Описание" sub="(необязательно)" />
                         <textarea 
                             rows="5"
+                            defaultValue={''}
                             placeholder="Описание товара..."
-                            className={InputClass}
+                            className={GlobalClass().InputClass+' resize-none'}
                         />
                     </div> 
                     

@@ -51,9 +51,9 @@ export default function Home()
                                 <div className="bg-white p-9 rounded-md shadow-2xl w-96">
                                     <FaQuoteLeft className="text-pink-200 w-10 h-10 mb-5" />
                                     <small className="text-gray-900 text-sm">
-                                        "Я чувствовал, что не смогу расти, пока не перееду в ShopMe. 
+                                        "Я чувствовала, что не смогу расти, пока не перейду в ShopMe. 
                                         Теперь меня поощряют продавать с ними больше. 
-                                        Мой бухгалтер даже сказал мне: «Слава богу, ты перешел на ShopMe»."
+                                        Мой бухгалтер даже сказал мне: «Слава богу, ты перешела на ShopMe»."
                                     </small>
                                     <p className="py-1 mt-4 block font-bold">Кортни Ли</p>
                                     <p>
@@ -515,7 +515,7 @@ export default function Home()
             <Disclosure 
                 as="section" 
                 className="bg-gray-900 bg-center bg-no-repeat bg-cover bg-fixed" 
-                style={{backgroundImage: 'url(/access/img/photo-1556740738-b6a63e27c4df.jpg)'}}
+                style={{backgroundImage: 'url(/access/img/1f7dd7ab94W.jpg)'}}
             >
                 <div className="bg-gray-900 bg-opacity-75 py-24 md:py-40 text-white">
                     <div className="max-w-3xl mx-auto px-4 sm:px-6">

@@ -19,6 +19,8 @@ module.exports = {
             '/dashboard/product': { page: '/dashboard/product' },
             '/dashboard/affiliate': { page: '/dashboard/affiliate' },
             '/dashboard/ecommerce': { page: '/dashboard/ecommerce' },
+            '/dashboard/projects': { page: '/dashboard/projects' },
+            '/dashboard/referrals': { page: '/dashboard/referrals' },
             '/dashboard/shop': { page: '/dashboard/shop' },
             '/dashboard/apps': { page: '/dashboard/apps' },
             '/dashboard': { page: '/dashboard' },            
@@ -26,6 +28,7 @@ module.exports = {
             '/signup': { page: '/signup' },
             '/login': { page: '/login' },            
             '/partners': { page: '/partners' },
+            '/feedback': { page: '/feedback' },
             '/500': { page: '/500' },
             '/404': { page: '/404' }
         }

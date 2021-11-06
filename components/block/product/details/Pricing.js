@@ -1,13 +1,13 @@
-import React from 'react'
-import { FaRegQuestionCircle } from 'react-icons/fa'
+import React, { useContext } from 'react'
 import { MdStar } from 'react-icons/md'
+import { ShopContext } from '../../../context/ShopContext'
 import { GetCard } from '../../../ui/card/GetCard'
+import { Label } from '../../../ui/form/label'
 
 
 export function Pricing(props) 
 {
-    const InputClass = 'px-4 py-2 border border-gray-200 focus:border-gray-300 focus:outline-none'
-
+    const {GlobalClass} = useContext(ShopContext)
     return (
         <>
             <GetCard 
@@ -16,15 +16,15 @@ export function Pricing(props)
                 style="p-4"
             >
                 <div>
-                    <label className="font-bold block mb-1 text-xs">Цена</label>
+                    <Label name="Цена" />
                     <div className="flex">
                         <input 
                             type="text" 
                             placeholder="Например. 348121032" 
                             value={props.details.price}
-                            className={InputClass+' rounded-l-md border-r-0 w-4/6'}
+                            className={GlobalClass('rounded-l-md border-r-0 w-4/6').InputClass}
                         /> 
-                        <select className={InputClass+' rounded-r-md w-2/6'}>
+                        <select className={GlobalClass('rounded-r-md w-2/6').InputClass}>
                             <option value="USD">USD</option>
                             <option value="AED">AED</option>
                             <option value="AFN">AFN</option>
@@ -53,25 +53,21 @@ export function Pricing(props)
                             </span>
                         </p>
                     </div>
-
-                    <p><hr /></p>
-                    <div className="w-full pt-2">
-                        <label class="flex items-center justify-between">
-                            <div className="flex items-center space-x-2 cursor-pointer">
-                                <span>Доступность</span>                                 
-                                <FaRegQuestionCircle 
-                                    className="text-gray-400 flex-none cursor-pointer" 
-                                    title="Переключатель доступности продукта Toggler." 
-                                />
-                            </div>
-                            <div className="switch mt-1">
-                                <input type="checkbox" />
-                                <span class="slider round"></span>                            
-                            </div>
-                        </label>
+                    <div className="w-full pt-2 border-t border-gray-100 dark:border-gray-800">
+                        <div className="pt-1">
+                            <Label 
+                                name="Доступность" 
+                                id="availability" 
+                                title="Переключатель доступности продукта" 
+                                size="flex items-center justify-between cursor-pointer text-base"
+                            >
+                                <div className="switch mt-1">
+                                    <input type="checkbox" />
+                                    <span class="slider round"></span>                            
+                                </div>                                
+                            </Label>
+                        </div>
                     </div>
-
-
                 </div>
                 {/* {<pre>{JSON.stringify(props.details, null, 4)}</pre>} */}
             </GetCard>

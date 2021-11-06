@@ -6,7 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 export function Question() 
 {
 
-    const ClassStyle = 'text-gray-800 hover:text-pink-600 hover:bg-gray-50 flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer'
+    const ClassStyle = 'dark:text-gray-50 text-gray-800 hover:text-pink-600 dark:hover:text-pink-400 hover:bg-gray-50 dark:hover:bg-gray-900 flex rounded-md items-center w-full px-2 py-2 text-sm cursor-pointer'
     const list = [
         {
             section: 'Помощь',
@@ -49,8 +49,8 @@ export function Question()
         <Popover>
         {({ open }) => (
           <>
-            <Popover.Button show={`top`} className="bg-white relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center">
-                <FiHelpCircle className="w-5 h-5" />
+            <Popover.Button show={`top`} className="bg-gray-50 dark:bg-gray-800 relative hover:bg-gray-100 dark:hover:bg-gray-900 rounded-full w-10 h-10 cursor-pointer grid place-items-center">
+                <FiHelpCircle className="w-5 h-5 dark:text-gray-50 text-gray-900" />
             </Popover.Button>
             <Transition
                 as={Fragment}
@@ -63,10 +63,10 @@ export function Question()
             >
                 <Popover.Panel className="absolute w-52 -top-80 left-32 z-10 max-w-sm px-4 mt-3 transform -translate-x-1/2 sm:px-0 lg:max-w-3xl">
                     <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative grid gap-1 bg-white p-2 grid-cols-1">
+                        <div className="relative grid gap-1 bg-white dark:bg-gray-800 p-2 grid-cols-1">
                             {list.map((item, i) => (
                                 <React.Fragment key={i}>
-                                <div className="p-2 text-sm border-b text-gray-400">{item.section}</div>
+                                <div className="p-2 text-sm border-b dark:border-gray-700 text-gray-400 dark:text-gray-600">{item.section}</div>
                                 {item.link?.map((text, idx) => (
                                     <div key={idx} className={ClassStyle}>
                                         <text.icon className="text-gray-400 mr-2" />

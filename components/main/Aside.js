@@ -67,21 +67,21 @@ export function Aside()
 
     return (
         <div className={`block ${menu ? 'mt-2' : 'mt-5'} w-full`}>
-            <ul>
+            <ul className="menu">
                 {Nav?.map((item, i) => (
                     <React.Fragment key={i}>
                         {i === 0 ? '' :
-                        <li className="text-sm text-gray-300 mt-3 mb-1 px-6 uppercase">
+                        <li className="text-sm text-gray-300 dark:text-gray-500 mt-3 mb-1 px-6 uppercase">
                             {menu ?
                             <div className="flex justify-center">
-                                <MinusIcon className="w-6 -ml-5 text-gray-300" />
+                                <MinusIcon className="w-6 -ml-5 text-gray-300 dark:text-gray-400" />
                             </div> :
                             <small>{item.section}</small>}
                         </li>}
                         {item.link?.map((link, idx) => (
                             <li key={idx}>
                                 <Link href={link.href}>
-                                    <a className={`flex items-center hover:text-pink-600 ${Active(`${link.href}`)}`}>
+                                    <a className={`flex items-center text-gray-900 dark:text-gray-50 dark:hover:text-pink-600 hover:text-pink-600 ${Active(`${link.href}`)}`}>
                                         <link.icon className={`text-gray-500 ${menu ? 'mr-1' : 'mr-4'} flex-none`} />
                                         <div className="flex justify-between w-full">
                                             <span className={`${menu ? 'hidden' : ''}`}>{link.name}</span>

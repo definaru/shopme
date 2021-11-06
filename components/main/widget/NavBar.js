@@ -10,9 +10,9 @@ export function NavBar()
     const { menu } = useContext(ShopContext)
 
     return (
-        <div className={`${menu ? 'w-20 overflow-hidden' : 'w-72'} bg-white border-r border-gray-50 relative z-20`}>
+        <div className={`${menu ? 'w-20 overflow-hidden' : 'w-72'} bg-white dark:bg-gray-900 border-r border-gray-50 dark:border-gray-800 relative z-20`}>
             <div className="fixed top-0 left-0 overflow-hidden">
-                <div className={`${menu ? 'px-5' : 'px-6'} py-3 border-b border-gray-50`}>
+                <div className={`${menu ? 'px-5' : 'px-6'} py-3 border-b border-gray-50 dark:border-gray-800`}>
                     <Link href="/dashboard">
                         <a className="flex items-center mt-0.5">
                             <img

@@ -7,15 +7,15 @@ SwiperCore.use([Scrollbar, Mousewheel])
 export function Table({children, thead = [], action = true, margin = 'pb-40', mousewheel = true, border = 'border'}) 
 {
 
-    const CheckboxClass = 'form-tick appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-pink-600 checked:border-transparent focus:outline-none'
+    const CheckboxClass = 'form-tick appearance-none h-5 w-5 border border-gray-300 dark:border-gray-900 rounded-md checked:bg-pink-600 checked:border-transparent focus:outline-none'
     
     return (
         <div className="w-full overflow-hidden">
-            <Swiper scrollbar={{"hide": false}} mousewheel={mousewheel} className="bg-gray-50">
+            <Swiper scrollbar={{"hide": false}} mousewheel={mousewheel} className="bg-gray-50 dark:bg-gray-800">
                 <SwiperSlide className={margin}>
                     <table className={`w-full ${border}`}>
                         {/*divide-y divide-gray-200 align-middle inline-block min-  relative z-0 overflow-x-auto */}
-                        <thead className="bg-gray-100">
+                        <thead className="bg-gray-100 dark:bg-gray-800">
                             <th className="p-4 w-12">
                                 <div>
                                     <label className="flex justify-center items-center">

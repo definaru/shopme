@@ -21,7 +21,7 @@ export function ShopCard({
                     <img src={image} className={`w-full h-60 object-cover object-center rounded-md ${opacity}`} alt="..." />
                     <div className="absolute top-8 left-8 w-80">
                         {icon ? <GiShoppingCart className="w-14 h-14 text-gray-900 mb-2" /> : <div className="h-7" />}
-                        <h2 className="block font-bold text-white text-3xl mb-4">
+                        <h2 className="block font-bold text-white dark:text-gray-900 text-3xl mb-4">
                             {header}
                         </h2>
                         <div className={`table px-10 py-3 rounded-md font-bold ${icon ? 'bg-white hover:bg-gray-900 hover:text-gray-50' : 'bg-gray-900 hover:bg-gray-50 text-white hover:text-gray-900'} `}>

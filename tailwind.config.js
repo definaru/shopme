@@ -1,13 +1,19 @@
 module.exports = {
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-    darkMode: 'media',
+    darkMode: 'class',
         theme: {
         extend: {},
     },
     variants: {
         extend: {
+            scale: ['focus-within'],
             contrast: ['hover', 'focus'],
-            backgroundColor: ['hover', 'focus', 'checked', 'active'],
+            userSelect: ['hover', 'focus'],
+            borderStyle: ['hover', 'focus'],
+            pointerEvents: ['hover', 'focus'],
+            grayscale: ['hover', 'focus', 'group-hover'],
+            textColor: ['active', 'focus', 'group-hover', 'group-focus'],
+            backgroundColor: ['hover', 'focus', 'checked', 'active', 'group-hover', 'group-focus'],
             borderColor: ['checked'],   
             margin: ['hover', 'focus'],  
             boxShadow: ['hover', 'focus', 'active'],   

@@ -13,7 +13,7 @@ export function Footer()
             list: [
                 {
                     text: 'Обратная связь',
-                    href: '#'
+                    href: '/feedback'
                 },
                 {
                     text: 'Контакты',
@@ -38,19 +38,19 @@ export function Footer()
                 },
                 {
                     text: 'Связяться с нами',
-                    href: '#'
+                    href: '/arbitration'
                 },
                 {
                     text: 'TrustCenter',
-                    href: '#'
+                    href: '/confidence'
                 },
                 {
                     text: 'Защита от мошенничества',
-                    href: '#'
+                    href: '/security'
                 },
                 {
                     text: 'Юридические сведения',
-                    href: '#'
+                    href: '/legal'
                 }
             ]
         },
@@ -59,19 +59,19 @@ export function Footer()
             list: [
                 {
                     text: 'Техническая поддержка',
-                    href: '#'
+                    href: '/support'
                 },
                 {
                     text: 'Сообщение о нарушениях',
-                    href: '#'
+                    href: '/ro'
                 },
                 {
                     text: 'Политики конфиденциальности',
-                    href: '#'
+                    href: '/privacy_policy'
                 },
                 {
                     text: 'Отказ от ответственности',
-                    href: '#'
+                    href: '/denial_of_responsibility'
                 }
             ]
         },
@@ -84,15 +84,15 @@ export function Footer()
                 },
                 {
                     text: 'Документация',
-                    href: '#'
+                    href: '/doc'
                 },
                 {
                     text: 'Пресса',
-                    href: '#'
+                    href: '/press'
                 },
                 {
-                    text: 'Предложения',
-                    href: '#'
+                    text: 'Предложения', // Таблица цен
+                    href: '/price'
                 }
             ]
         }

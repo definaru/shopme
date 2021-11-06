@@ -1,21 +1,12 @@
 import React from 'react'
 import { GetCard } from '../../ui/card/GetCard'
-import { CalendarIcon } from '@heroicons/react/outline'
 import { TransactionsCard } from '../../ui/card/TransactionsCard'
+import { Calendar } from '../../ui/datetime/Calendar'
 
 
 export function Transactions() 
 {
 
-    function Calendar() {
-        const date = new Date().toLocaleDateString('ru')
-        return (
-            <div className="flex items-center space-x-2 text-sm">
-                <CalendarIcon className="w-4 h-4 text-gray-400" /> 
-                <span>{date}</span>
-            </div>
-        )
-    }
     const List = [
         {
             user: {

@@ -4,6 +4,8 @@ import { IndexLayout } from '../components/layout/IndexLayout'
 import { FaQuoteLeft } from 'react-icons/fa'
 import { Featured } from '../components/block/partner/Featured'
 import { Marketplaces } from '../components/block/partner/Marketplaces'
+import { CallToAction } from '../components/block/partner/CallToAction'
+import { FooterAction } from '../components/block/partner/FooterAction'
 
 
 export default function Partners() 
@@ -18,7 +20,8 @@ export default function Partners()
                 <div className="flex justify-between mt-10">
                     <div className="w-2/4 pr-10">
                         <h1 className="font-bold text-gray-900 text-6xl mt-5">
-                            Партнерская экосистема и интеграции ShopMe
+                            <small>Партнерская экосистема</small> <br />
+                            <span className="text-pink-600">и интеграции ShopMe</span>
                         </h1>
                         <p className="text-md text-gray-700 py-14">
                             Мы сотрудничаем с ведущими технологическими 
@@ -29,13 +32,17 @@ export default function Partners()
                         <div className="flex">
                             <div>
                                 <Link href="/signup">
-                                    <a className="bg-pink-600 text-gray-50 px-6 py-4 text-xl font-bold rounded mr-0 md:mr-4 border border-pink-600">
+                                    <a className="bg-pink-600 text-gray-50 px-6 py-4 text-xl font-bold rounded mr-0 md:mr-4 hover:bg-gray-900">
                                         Стать партнёром
                                     </a>                                    
                                 </Link>
                             </div>
                             <div>
-                                <a href="#" className="text-gray-800 bg-gray-50 px-6 py-4 text-xl font-semibold rounded border border-gray-100 hover:text-pink-600 hover:border-pink-600">
+                                <a 
+                                    data-scroll 
+                                    href="#learn_more"
+                                    className="text-gray-800 bg-gray-100 hover:bg-gray-200 px-6 py-4 text-xl font-semibold rounded hover:text-pink-600"
+                                >
                                     Узнать больше
                                 </a>
                             </div>
@@ -45,8 +52,8 @@ export default function Partners()
 
                         <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 block w-4/5 h-full float-right rounded">
                             <img 
-                                src="/access/img/919436.jpg" 
-                                className="w-full shadow-2xl rounded opacity-20" 
+                                src="/access/img/2199190.jpg" 
+                                className="w-full shadow-2xl rounded opacity-40" 
                                 alt="..." 
                             />                            
                         </div>
@@ -74,7 +81,9 @@ export default function Partners()
                 </div>
             </div>   
             <Featured />     
-            <Marketplaces />    
+            <Marketplaces /> 
+            <CallToAction /> 
+            <FooterAction />  
         </IndexLayout>
     )
 }

@@ -9,7 +9,8 @@ export function DropdownSelect({
     list = []
 }) 
 {
-    const [check, setCheck] = useState('All')
+    const choose = list.length ? list[0].header : 'All' 
+    const [check, setCheck] = useState(choose)
     return (
         <Menu as="div" className="relative inline-block text-left">
             <div>
@@ -27,13 +28,13 @@ export function DropdownSelect({
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="origin-top-right absolute right-0 mt-0 w-40 rounded-md shadow-lg bg-white z-20 focus:outline-none">
+                <Menu.Items className="origin-top-right absolute right-0 mt-0 w-40 rounded-md shadow-lg bg-white dark:bg-gray-900 z-20 focus:outline-none">
                     <div className="py-1">
                         {list.map((item, i) => (
                         <Menu.Item key={i}>
                             <div 
                                 onClick={() => setCheck(`${item.header}`)}
-                                className={`cursor-pointer ${check === item.header ? 'bg-gray-50' : 'bg-transparent'} flex justify-between items-center space-x-2 hover:bg-gray-100 text-gray-600 hover:text-gray-900 px-5 py-2 text-sm`}
+                                className={`cursor-pointer ${check === item.header ? 'bg-gray-50 dark:bg-gray-800 dark:text-white' : 'bg-transparent text-gray-600 dark:text-gray-400'} flex justify-between items-center space-x-2 dark:hover:bg-gray-800  hover:bg-gray-100 dark:hover:text-gray-100 hover:text-gray-900 px-5 py-2 text-sm`}
                             >
                                 <span className={check === item.header ? 'font-bold' : ''}>{item.header}</span>
                                 {check === item.header ? <CheckIcon className="w-4 h-4 text-pink-600" /> : ''}

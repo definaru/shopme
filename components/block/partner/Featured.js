@@ -32,7 +32,7 @@ export function Featured()
     ]
 
     return (
-        <Disclosure as="section" className="bg-gray-50 py-10 md:py-20 mt-5">
+        <Disclosure as="section" id="learn_more" className="bg-gray-50 py-10 md:py-20 mt-5">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="grid">
                     <div className="md:w-2/4 w-full mt-5">
@@ -42,7 +42,7 @@ export function Featured()
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4 py-16">
                         {DataParther.map((item, i) => (
-                            <div key={i} className="rounded-xl bg-white shadow">
+                            <div key={i} className="group rounded-xl bg-white shadow hover:shadow-lg">
                                 <Link href={item.href}>
                                     <a>
                                         <img 
@@ -53,7 +53,7 @@ export function Featured()
                                     </a>
                                 </Link>
                                 <div className="px-6 pb-6">
-                                    <p className="text-base text-gray-500">
+                                    <p className="text-base text-gray-500 group-hover:text-gray-900">
                                         {item.text}
                                     </p>
                                 </div>

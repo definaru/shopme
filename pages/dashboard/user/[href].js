@@ -1,16 +1,15 @@
 import React from 'react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MainLayout } from '../../../components/layout/MainLayout'
 import { UserList } from '../../../components/data/UserList'
 import { BiBuildings, BiMap, BiCalendar, BiPencil, BiListUl } from 'react-icons/bi'
 import { GoVerified } from 'react-icons/go'
 import { FiMoreVertical } from 'react-icons/fi'
-import ReactTooltip from 'react-tooltip'
 import { GetCard } from '../../../components/ui/card/GetCard'
 import { MdFileDownload, MdQuestionAnswer, MdShare, MdRepeat, MdPhone } from 'react-icons/md'
 import { FaBriefcase, FaCircle, FaMailBulk, FaUserFriends } from 'react-icons/fa'
 import { DropdownMenu } from '../../../components/ui/dropdown/DropdownMenu'
+import ReactTooltip from 'react-tooltip'
 
 
 export default function DetailUser() 

@@ -4,8 +4,11 @@ import { useRouter } from 'next/router'
 import { Header } from '../main/Header'
 import { NavBar } from '../main/widget/NavBar'
 import { ShopContext } from '../context/ShopContext'
-import Cookie from 'js-cookie'
+import { GlobalClass } from '../ui/style/GlobalClass'
 import { User } from '../data/User'
+import { ToastContainer, toast } from 'react-toastify'
+import Cookie from 'js-cookie'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export function MainLayout({children, title = 'Page', description = '...'}) 
@@ -18,6 +21,7 @@ export function MainLayout({children, title = 'Page', description = '...'})
     const [menu, setMenu] = useState(false)
     const [cookie, setSookie] = useState(null)
     const [isLoading, setLoader] = useState(true)
+    const [theme, setTheme] = useState(true)
 
 
     useEffect(()=>{
@@ -56,25 +60,35 @@ export function MainLayout({children, title = 'Page', description = '...'})
 
     return (
         <ShopContext.Provider value={{
-            user,
-            setUser,
-            setOpen,
-            menu, 
-            setMenu,
-            open,
-            cookie
+            user, setUser,
+            open, setOpen,
+            menu, setMenu,
+            theme, setTheme,
+            GlobalClass,
+            cookie, toast
         }}>
 			<Head>
 				<title>{title}</title>
                 <meta name="description" content={description} />
 			</Head>
-            <div className="dashboard bg-gray-50 block h-full">
+            <div className={`dashboard block h-full ${theme ? 'dark' : ''}`}>
                 <Header />
                 <div className="flex flex-row">
                     <NavBar />
-                    <div className="w-full bg-gray-50 h-full block py-16 px-8">
+                    <div className="w-full bg-gray-50 bg h-full block py-16 px-8">
                         {children}
                     </div>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={false}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                    />
                 </div>
             </div>
         </ShopContext.Provider>

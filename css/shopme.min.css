@@ -9,6 +9,87 @@ body, html {
     font-family: 'Play', sans-serif;
 }
 
+/* .dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+    --tw-divide-opacity: 0;
+    border-color: transparent;
+} */
+.dark .bg {
+    background: #0d111a;
+}
+.dark .menu li a:hover {
+    background: #0d111a;
+}
+
+.dark_calendar {
+    box-shadow: 0 0 10px #111;
+    font-family: 'Play', sans-serif !important;
+}
+.white_calendar .react-datepicker__header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f9fafb;
+}
+.white_calendar {
+    box-shadow: 0 0 10px rgb(17 17 17 / 16%);
+    font-family: 'Play', sans-serif !important;
+}
+.white_calendar div.react-datepicker__triangle::after {
+    border-top: none;
+    border-bottom-color: #fff !important;
+}
+.white_calendar div.react-datepicker__triangle::before {
+    border-bottom-color: #eee !important;
+}
+
+.react-datepicker.white_calendar {
+    background-color: #fff;
+    color: #ffffff;
+    border: 1px solid #fff;
+}
+.react-datepicker.dark_calendar {
+    background-color: #1f2937;
+    color: #ffffff;
+    border: 1px solid #1f2937;
+}
+
+.dark_calendar div.react-datepicker__triangle::after {
+    border-top: none;
+    border-bottom-color: #1f2937 !important;
+}
+.dark_calendar div.react-datepicker__triangle::before {
+    border-bottom-color: #11151d !important;
+}
+.react-datepicker__day--selected {
+    border-radius: 0.3rem;
+    background-color: #db2777 !important;
+    color: #fff !important;
+}
+.dark_calendar .react-datepicker__day {color: #98a1ab;}
+.dark_calendar .react-datepicker__header {
+    text-align: center;
+    background-color: #1f2937;
+    border-bottom: 1px solid #111827;
+    border-top-left-radius: 0.3rem;
+    padding: 8px 0;
+    position: relative;
+}
+.dark_calendar .react-datepicker__day-names {font-weight: 600;}
+.dark_calendar .react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header {
+    margin-top: 0;
+    color: #eb4898;
+    font-weight: bold;
+    font-size: 0.944rem;
+}
+.dark_calendar .react-datepicker__header .react-datepicker__day-name {
+    color: #fff;
+}
+.dark_calendar .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+    color: #d0d6de;
+    display: inline-block;
+    width: 1.7rem;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.166rem;
+}
 
 .nav-in {
     width: 100%;
@@ -89,6 +170,9 @@ body, html {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+}
+.dark .slider {
+    background-color: #3f485c;
 }
 
 .slider:before {

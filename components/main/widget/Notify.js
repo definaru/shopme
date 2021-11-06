@@ -60,11 +60,11 @@ export function Notify()
 
     return (
         <Menu as="div" className="relative">
-            <div className="bg-white relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center">
+            <div className="bg-gray-50 dark:bg-gray-800 relative dark:hover:bg-gray-900 hover:bg-gray-100 rounded-full w-10 h-10 cursor-pointer grid place-items-center">
                 <Menu.Button className="focus:outline-none">
                     <FaCircle className="text-red-600 w-2 h-2 absolute top-1 right-1 animate-ping" />
                     <FaCircle className="text-red-600 w-2 h-2 absolute top-1 right-1" />
-                    <FiBell className="w-5 h-5 text-gray-400 hover:text-gray-500" />
+                    <FiBell className="w-5 h-5 text-gray-400 hover:text-gray-500 dark:text-red-50 dark:hover:text-gray-100" />
                 </Menu.Button>
             </div>
             <Transition
@@ -76,14 +76,14 @@ export function Notify()
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute right-0 w-96 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="px-6 py-3 flex items-center justify-between">
-                        <h2 className="text-black font-semibold text-md">
+                <Menu.Items className="absolute right-0 w-96 mt-2 origin-top-right bg-white dark:bg-gray-800 dark:shadow rounded-md shadow-lg focus:outline-none">
+                    <div className="px-6 py-3 flex items-center justify-between border-b dark:border-gray-900 border-gray-50">
+                        <h2 className="dark:text-white text-black font-semibold text-md">
                             {'Notifications'}
                         </h2>
                         <p className="text-sm text-gray-400">
                             Messages 
-                            <span className="text-pink-700 bg-pink-200 px-2 py-0.5 ml-3 font-bold rounded-full leading-none">
+                            <span className="text-pink-700 bg-pink-200 px-1.5 py-0.5 ml-3 font-bold rounded-full leading-none">
                                 5
                             </span>
                         </p>
@@ -92,12 +92,12 @@ export function Notify()
                         autoHide
                         universal 
                         autoHideTimeout={500}
-                        style={{ width: '100%', height: 250 }}
+                        style={{ width: '100%', height: 250, border: 'none' }}
                     >
                         <div className="p-0">
                             {onData?.map((item, i) => (
                             <Menu.Item key={i}>
-                                <a href={item.href} className="flex justify-between items-center border-b border-gray-50 rounded bg-white hover:bg-gray-50 px-6 py-3">
+                                <a href={item.href} className="h-20 flex justify-between items-center border-b border-gray-50 dark:border-gray-900 bg-white dark:bg-gray-800 dark:hover:bg-gray-900 hover:bg-gray-50 px-6 py-3">
                                     <div className="w-1/5 flex items-center">
                                         <FaCircle className="w-3 h-3 text-pink-600 mr-3 flex-none" />
                                         {item.image ? 
@@ -112,7 +112,7 @@ export function Notify()
                                     </div>
                                     <div className="flex justify-between w-4/5 ml-4">
                                         <div className="flex flex-col text-sm">
-                                            <h2 className="text-gray-800 font-semibold text-md">
+                                            <h2 className="text-gray-800 dark:text-gray-50 font-semibold text-md">
                                                 {item.header}
                                             </h2>                                    
                                             <p className="text-sm text-gray-500">
@@ -133,15 +133,14 @@ export function Notify()
                         </div>
                     </Scrollbars>
 
-
-
                     <div className="p-0">
                         <Link href="/dashboard/apps">
-                            <a className="px-6 py-4 flex items-center justify-center text-pink-600 text-sm bg-white hover:text-gray-800 hover:bg-gray-50">
+                            <a className="border border-gray-50 dark:border-gray-800 px-6 py-4 rounded-b-md flex items-center justify-center text-pink-600 dark:text-gray-200 text-sm bg-white dark:bg-gray-900 dark:hover:bg-black dark:hover:text-pink-500 hover:text-gray-800 hover:bg-gray-50">
                                 Смотреть всё <FiChevronsRight className="ml-3 w-4" />
                             </a>
                         </Link>
                     </div>
+
                 </Menu.Items>
             </Transition>
         </Menu>

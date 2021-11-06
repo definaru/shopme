@@ -29,7 +29,7 @@ export function ImportForm()
     return (
         <>
             {onData?.map((item, i) => (
-            <div className="py-4 border-b" key={i}>
+            <div className="py-4 border-b border-gray-50 dark:border-gray-800" key={i}>
                 <div className="flex items-center">
                     <div>
                         <img 
@@ -40,7 +40,7 @@ export function ImportForm()
                     </div>
                     <div className="flex flex-row justify-between w-full">
                         <div className="flex flex-col">
-                            <h4 className="font-semibold">{item.header}</h4>
+                            <h4 className="font-semibold text-gray-900 dark:text-gray-200">{item.header}</h4>
                             <span className="text-sm text-gray-400"><small>{item.text}</small></span>
                         </div>
                         <div>

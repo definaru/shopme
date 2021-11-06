@@ -284,13 +284,13 @@ export function AnaliticsContent()
 
     return (
         <div className="grid grid-cols-4 gap-5">
-            <div className="p-4 bg-white rounded shadow-sm">
+            <div className="p-4 bg-white dark:bg-gray-900 rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
                         <p className="text-gray-400 font-thin text-md uppercase">
                             Пользователей{/* TOTAL USERS */}
                         </p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                        <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 py-2">
                             <CountUp
                                 end={72540} 
                                 duration={4}
@@ -309,8 +309,8 @@ export function AnaliticsContent()
                     </div>
                 </div>
                 <small className="text-gray-400">
-                    <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 mr-2">
-                        <small className="flex items-center gap-1 text-green-600">
+                    <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 dark:bg-green-900 mr-2">
+                        <small className="flex items-center gap-1 text-green-600 dark:text-green-300">
                             <FiTrendingUp />
                             <CountUp
                                 end={12.5} 
@@ -323,13 +323,14 @@ export function AnaliticsContent()
                     </span> from 70,104
                 </small>
             </div>
-            <div className="p-4 bg-white rounded shadow-sm">
+
+            <div className="p-4 bg-white dark:bg-gray-900 rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
                         <p className="text-gray-400 font-thin text-md uppercase">
                             Сеансы{/* SESSIONS */}
                         </p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                        <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 py-2">
                             <CountUp
                                 end={56.9} 
                                 duration={5}
@@ -351,8 +352,8 @@ export function AnaliticsContent()
                     </div>
                 </div>
                 <small className="text-gray-400">
-                    <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 mr-2">
-                        <small className="flex items-center gap-1 text-green-600">
+                    <span className="inline-block text-sm px-2 py-0 rounded bg-green-100 dark:bg-green-900 mr-2">
+                        <small className="flex items-center gap-1 text-green-600 dark:text-green-300">
                             <FiTrendingUp /> 
                             <CountUp
                                 end={6.5} 
@@ -366,13 +367,14 @@ export function AnaliticsContent()
                     </span> from 29.1%
                 </small>
             </div>
-            <div className="p-4 bg-white rounded shadow-sm">
+
+            <div className="p-4 bg-white dark:bg-gray-900 rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
                         <p className="text-gray-400 font-thin text-md uppercase">
                             Посещаемость{/* CLICK RATE */}
                         </p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                        <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 py-2">
                             <CountUp
                                 end={56.8} 
                                 duration={7}
@@ -394,8 +396,8 @@ export function AnaliticsContent()
                     </div>
                 </div>
                 <small className="text-gray-400">
-                    <span className="inline-block text-sm px-2 py-0 rounded bg-red-100 mr-2">
-                        <small className="flex items-center gap-1 text-red-600">
+                    <span className="inline-block text-sm px-2 py-0 rounded bg-red-100 dark:bg-red-700 mr-2">
+                        <small className="flex items-center gap-1 text-red-600 dark:text-red-300">
                             <FiTrendingDown /> 
                             <CountUp
                                 end={4.4}
@@ -409,13 +411,14 @@ export function AnaliticsContent()
                     </span> from 61.2%
                 </small>
             </div>
-            <div className="p-4 bg-white rounded shadow-sm">
+
+            <div className="p-4 bg-white dark:bg-gray-900 rounded shadow-sm">
                 <div className="flex flex-row">
                     <div className="w-2/4">
                         <p className="text-gray-400 font-thin text-md uppercase">
                             Просмотры{/* PAGEVIEWS */}
                         </p>
-                        <h4 className="text-2xl font-semibold text-gray-900 py-2">
+                        <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 py-2">
                             <CountUp
                                 end={92913} 
                                 duration={8}
@@ -434,8 +437,8 @@ export function AnaliticsContent()
                     </div>
                 </div>
                 <small className="text-gray-400">
-                    <span className="inline-block text-sm px-2 py-0 rounded bg-gray-100 mr-2">
-                        <small className="flex items-center gap-1 text-gray-600">
+                    <span className="inline-block text-sm px-2 py-0 rounded bg-gray-100 dark:bg-gray-600 mr-2">
+                        <small className="flex items-center gap-1 text-gray-600 dark:text-gray-300">
                             0.0%
                         </small>
                     </span> from 2,913

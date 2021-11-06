@@ -60,7 +60,7 @@ export default function Index()
             price: 4560,
             preffix: '₽',
             color: 'text-green-500',
-            background: 'bg-green-100',
+            background: 'bg-green-100 dark:bg-green-800',
             text: 'Получено за этот месяц',
             action: 'hide0'
         },
@@ -69,8 +69,8 @@ export default function Index()
             icon: FaRegHandshake,
             price: 520,
             preffix: '',
-            color: 'text-indigo-500',
-            background: 'bg-indigo-100',
+            color: 'text-indigo-500 dark:text-indigo-900',
+            background: 'bg-indigo-100 dark:bg-indigo-700',
             text: 'Новых клиентов',
             action: 'hide1'
         }
@@ -79,14 +79,14 @@ export default function Index()
     return (
         <MainLayout title={`${Title} | ShopMe`}>
             <div className="w-full h-full mb-80">
-                <div className="flex items-center justify-between py-5 border-b border-gray-100 mb-5">
+                <div className="flex items-center justify-between py-5 border-b border-gray-100 dark:border-gray-900 mb-5">
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                             {Title}
                         </h1>
                     </div>
                     <div>
-                        <Link href="/dashboard/addtask">
+                        <Link href="/dashboard/projects">
                             <a className="table px-10 py-4 rounded bg-pink-600 hover:bg-pink-700 text-md text-yellow-50">
                                 <div className="flex items-center gap-2 font-semibold">
                                     <FiPlus className="text-white w-5 h-5" />
@@ -115,14 +115,16 @@ export default function Index()
                 
                 <AnaliticsContent />
                 <div className="grid grid-cols-12 gap-5 my-5">
-                    <div className="col-span-5 bg-white rounded shadow-sm">
+                    <div className="col-span-5 bg-white dark:bg-gray-900 rounded shadow-sm">
                         <div className="flex flex-col">
-                            <div className="flex items-center justify-between p-4 border-b border-gray-50">
-                                <h4 className="font-semibold text-md">Импортировать данные в ShopMe</h4>
+                            <div className="flex items-center justify-between p-4 border-b border-gray-50 dark:border-gray-800">
+                                <h4 className="font-semibold text-md text-gray-900 dark:text-gray-50">
+                                    Импортировать данные в ShopMe
+                                </h4>
                                 <DropdownMenu 
                                     options={<FiMoreVertical className="w-5 h-5" />} 
                                     lists={Menus}
-                                    style='relative hover:bg-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center'
+                                    style='relative hover:bg-gray-50 text-gray-50 rounded-full w-10 h-10 cursor-pointer grid place-items-center'
                                 />
                             </div>                                
                             <div className="p-4">
@@ -131,8 +133,8 @@ export default function Index()
                                     импортируя свои данные на платформу ShopMe.
                                 </p>
                                 <div className="flex flex-col mt-4">
-                                    <div className="py-4 border-b">
-                                        <h4 className="font-semibold text-md">Import users from:</h4>
+                                    <div className="py-4 border-b border-gray-50 dark:border-gray-800">
+                                        <h4 className="font-semibold text-md text-gray-900 dark:text-gray-50">Import users from:</h4>
                                     </div>
                                     <ImportForm />
                                     <div className="py-4 px-3">
@@ -148,15 +150,15 @@ export default function Index()
                             </div>                                
                         </div>
                     </div>
-                    <div className="col-span-7 bg-white rounded shadow-sm">
+                    <div className="col-span-7 bg-white dark:bg-gray-900 rounded shadow-sm">
                         <MonthlyExpenses />
                     </div>
                 </div>
 
-                <div className="grid bg-white rounded shadow-sm mb-3">
-                    <div className="flex items-center justify-between px-4 py-1 border-b border-gray-50">
+                <div className="grid bg-white dark:bg-gray-900 rounded shadow-sm mb-3">
+                    <div className="flex items-center justify-between px-4 py-1 border-b border-gray-50 dark:border-gray-900">
                         <div>
-                            <div className="text-lg font-bold">
+                            <div className="text-lg font-bold text-gray-900 dark:text-gray-100">
                                 Пользователи
                             </div>
                         </div>                        
@@ -165,7 +167,7 @@ export default function Index()
                                 <div className="flex items-center">
                                     <p className="pr-3 text-gray-500 text-sm">Статус:</p>
                                     <DropdownSelect 
-                                        style='px-3 py-2 text-sm space-x-2 bg-white border border-gray-50 rounded'
+                                        style='px-3 py-2 text-sm space-x-2 text-gray-800 dark:text-gray-100 dark:border-gray-900 bg-white dark:bg-gray-900 border border-gray-50 rounded'
                                         arrow={true}
                                         list={
                                         [
@@ -177,7 +179,7 @@ export default function Index()
                                     } />
                                     <p className="px-3 text-gray-500 text-sm">Зарегистрирован:</p>
                                     <DropdownSelect 
-                                        style='px-3 py-2 text-sm space-x-2 bg-white border border-gray-50 rounded'
+                                        style='px-3 py-2 text-sm space-x-2 text-gray-800 dark:text-gray-100 dark:border-gray-900 bg-white dark:bg-gray-900 border border-gray-50 rounded'
                                         arrow={true}
                                         list={
                                         [
@@ -188,13 +190,13 @@ export default function Index()
                                     } />
                                 </div>
                             </div>  
-                            <div className="flex items-center px-2 py-2 rounded bg-white hover:bg-gray-100 focus:bg-gray-50">
-                                <FiSearch className="opacity-25 mr-2" />
+                            <div className="flex items-center px-2 py-2 rounded bg-white dark:bg-gray-900 dark:hover:bg-gray-800 hover:bg-gray-100 focus:bg-gray-50">
+                                <FiSearch className="opacity-25 mr-2 text-gray-400 dark:text-gray-50" />
                                 <input 
                                     type="search" 
                                     name="search" 
                                     placeholder="Поиск..." 
-                                    className="placeholder-gray-300 bg-transparent focus:outline-none text-sm"
+                                    className="placeholder-gray-300 dark:placeholder-gray-600 bg-transparent focus:outline-none text-sm text-gray-800 dark:text-gray-50"
                                 />
                             </div>
                         </div>
