@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+.link-dashed {
+    @apply border-b border-dashed hover:border-solid text-gray-600 hover:text-pink-600 hover:border-pink-400 border-gray-600
+}

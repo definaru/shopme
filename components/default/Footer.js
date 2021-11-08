@@ -17,7 +17,7 @@ export function Footer()
                 },
                 {
                     text: 'Контакты',
-                    href: '#'
+                    href: '/contact'
                 },
                 {
                     text: 'Промоакции',
