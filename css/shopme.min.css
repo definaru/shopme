@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 body, html {
+    font-family: 'Play', sans-serif !important;
+}
+
+.scroll {
     font-family: 'Play', sans-serif;
 }
 
@@ -9,10 +12,6 @@ body, html {
     font-family: 'Play', sans-serif;
 }
 
-/* .dark .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
-    --tw-divide-opacity: 0;
-    border-color: transparent;
-} */
 .dark .bg {
     background: #0d111a;
 }

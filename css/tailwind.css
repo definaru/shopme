@@ -3,6 +3,12 @@
 @tailwind utilities;
 @tailwind screens;
 
+@layer base {
+    @font-face {
+        font-family: 'Play', sans-serif;
+    }
+}
+
 .link-dashed {
     @apply border-b border-dashed hover:border-solid text-gray-600 hover:text-pink-600 hover:border-pink-400 border-gray-600
 }
