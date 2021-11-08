@@ -25,6 +25,7 @@ module.exports = {
             '/dashboard/apps': { page: '/dashboard/apps' },
             '/dashboard': { page: '/dashboard' },            
             '/contact': { page: '/contact' },            
+            '/price': { page: '/price' },            
             '/reset-password': { page: '/reset-password' },
             '/signup': { page: '/signup' },
             '/login': { page: '/login' },            

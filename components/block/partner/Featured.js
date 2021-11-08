@@ -6,12 +6,6 @@ export function Featured()
 {
     const DataParther = [
         {
-            image: '/access/img/partner/defina.png',
-            href: '#',
-            header: 'Defina',
-            text: 'Интернет технологии для ведения бизнеса online.'
-        },
-        {
             image: '/access/img/partner/defina_store.png',
             href: '#',
             header: 'Defina Store',
@@ -40,7 +34,7 @@ export function Featured()
                             Рекомендуемые партнерские интеграции
                         </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 md:gap-4 py-16">
+                    <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 py-16">
                         {DataParther.map((item, i) => (
                             <div key={i} className="group rounded-xl bg-white shadow hover:shadow-lg">
                                 <Link href={item.href}>

@@ -18,7 +18,7 @@ export function CallToAction()
                         Присоединяйтесь к партнерской экосистеме {web.company} сегодня
                     </h2>
                     <div className="flex justify-center">
-                        <Link href="/become-partner">
+                        <Link href="/signup">
                             <a className="table mt-4 shadow-sm font-bold uppercase hover:shadow-lg px-10 py-4 rounded-full hover:text-gray-900 hover:bg-gray-50 text-pink-50 bg-pink-600">
                                 Стать партнером
                             </a>

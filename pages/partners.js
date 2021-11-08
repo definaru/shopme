@@ -20,7 +20,7 @@ export default function Partners()
                 <div className="flex justify-between mt-10">
                     <div className="w-2/4 pr-10">
                         <h1 className="font-bold text-gray-900 text-6xl mt-5">
-                            <small>Партнерская экосистема</small> <br />
+                            <small className="font-thin">Партнерская экосистема</small> <br />
                             <span className="text-pink-600">и интеграции ShopMe</span>
                         </h1>
                         <p className="text-md text-gray-700 py-14">
@@ -32,7 +32,7 @@ export default function Partners()
                         <div className="flex">
                             <div>
                                 <Link href="/signup">
-                                    <a className="bg-pink-600 text-gray-50 px-6 py-4 text-xl font-bold rounded mr-0 md:mr-4 hover:bg-gray-900">
+                                    <a className="bg-pink-600 text-gray-50 px-8 py-4 text-xl font-bold rounded mr-0 md:mr-4 hover:bg-gray-900">
                                         Стать партнёром
                                     </a>                                    
                                 </Link>
@@ -41,7 +41,7 @@ export default function Partners()
                                 <a 
                                     data-scroll 
                                     href="#learn_more"
-                                    className="text-gray-800 bg-gray-100 hover:bg-gray-200 px-6 py-4 text-xl font-semibold rounded hover:text-pink-600"
+                                    className="text-gray-800 bg-gray-100 hover:bg-gray-200 px-8 py-4 text-xl font-semibold rounded hover:text-pink-600"
                                 >
                                     Узнать больше
                                 </a>
@@ -50,15 +50,15 @@ export default function Partners()
                     </div>
                     <div className="w-2/4 relative">
 
-                        <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 block w-4/5 h-full float-right rounded">
+                        <div className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 block w-4/5 h-96 float-right rounded">
                             <img 
                                 src="/access/img/2199190.jpg" 
-                                className="w-full shadow-2xl rounded opacity-40" 
+                                className="w-full h-96 shadow-2xl object-cover rounded opacity-40" 
                                 alt="..." 
                             />                            
                         </div>
 
-                        <div className="absolute z-30 top-80 right-52">
+                        <div className="absolute z-30 top-36 right-52">
                             <div className="bg-white bg-opacity-90 p-9 rounded-md shadow-xl w-96">
                                 <FaQuoteLeft className="text-pink-200 w-10 h-10 mb-5" />
                                 <small className="text-gray-900 text-sm">
