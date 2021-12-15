@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Disclosure } from '@headlessui/react'
-import { BookmarkAltIcon, ChartBarIcon, CursorClickIcon, MenuIcon, PhoneIcon, PlayIcon, ShieldCheckIcon, SupportIcon, ViewGridIcon, XIcon } from '@heroicons/react/outline'
+import { ReceiptTaxIcon, ChartBarIcon, CursorClickIcon, MenuIcon, PlayIcon, PresentationChartLineIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Dropdown from '../ui/dropdown/Dropdown'
 
@@ -12,48 +12,40 @@ export function Header()
 
     const solutions = [
         {
-            name: 'Analytics',
-            description: 'Get a better understanding of where your traffic is coming from.',
+            name: 'Партнёрская программа',
+            description: 'Зарабатывайте на продвижении, лёгкий старт без вложений.',
             href: '#',
             icon: ChartBarIcon,
         },
         {
-            name: 'Engagement',
-            description: 'Speak directly to your customers in a more meaningful way.',
+            name: 'Интернет-магазины',
+            description: 'Публикуйте товары или услуги, и экономьте на рекламе.',
             href: '#',
             icon: CursorClickIcon,
-        },
-        { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
-        {
-            name: 'Integrations',
-            description: "Connect with third-party tools that you're already using.",
-            href: '#',
-            icon: ViewGridIcon,
         }
     ]
     const callsToAction = [
-        { name: 'Смотреть видео', href: '#', icon: PlayIcon },
-        { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+        { 
+            name: 'Смотреть видео', 
+            href: '#', 
+            icon: PlayIcon 
+        }
     ]
     const resources = [
         {
-            name: 'Help Center',
-            description: 'Get all of your questions answered in our forums or contact support.',
+            name: 'Компаниям',
+            description: 'Узнайте, как раскрутить свой интернет-магазин без вложений в рекламу.',
             href: '#',
-            icon: SupportIcon,
+            icon: PresentationChartLineIcon,
         },
         {
-            name: 'Guides',
-            description: 'Learn how to maximize our platform to get the most out of it.',
+            name: 'Партнёрам',
+            description: 'Как заработать с нуля, без вложений и открытия компании.',
             href: '#',
-            icon: BookmarkAltIcon,
+            icon: ReceiptTaxIcon,
         }
     ]
-    const recentPosts = [
-        { id: 1, name: 'Boost your conversion rate', href: '#' },
-        { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-        { id: 3, name: 'Improve your customer experience', href: '#' },
-    ]
+
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
@@ -167,7 +159,7 @@ export function Header()
                                     'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none'
                                     )}
                                 >
-                                    <span>Обучение</span>
+                                    <span>О платформе</span>
                                     <ChevronDownIcon
                                         className={classNames(
                                             open ? 'text-gray-600' : 'text-gray-400',
@@ -200,7 +192,7 @@ export function Header()
                                                 >
                                                     <item.icon className="flex-shrink-0 h-6 w-6 text-pink-600" />
                                                     <div className="ml-4">
-                                                        <p className="text-base font-medium text-gray-900">{item.name}</p>
+                                                        <p className="text-base font-bold text-gray-900">{item.name}</p>
                                                         <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                                                     </div>
                                                 </a>
@@ -209,17 +201,8 @@ export function Header()
                                         <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
                                             <div>
                                                 <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">
-                                                    Обучающая информация
+                                                    Возможности платформы
                                                 </h3>
-                                                <ul className="mt-4 space-y-4">
-                                                    {recentPosts.map((post) => (
-                                                        <li key={post.id} className="text-base truncate">
-                                                        <a href={post.href} className="font-medium text-gray-900 hover:text-gray-700">
-                                                            {post.name}
-                                                        </a>
-                                                        </li>
-                                                    ))}
-                                                </ul>
                                             </div>
                                             <div className="mt-5 text-sm">
                                                 <a href="#" className="font-medium text-pink-600 hover:text-pink-700">

@@ -515,7 +515,7 @@ export default function Home()
             <Disclosure 
                 as="section" 
                 className="bg-gray-900 bg-center bg-no-repeat bg-cover bg-fixed" 
-                style={{backgroundImage: 'url(/access/img/1f7dd7ab94W.jpg)'}}
+                style={{backgroundImage: 'url(/access/img/photo-1556740738-b6a63e27c4df.jpg)'}}
             >
                 <div className="bg-gray-900 bg-opacity-75 py-24 md:py-40 text-white">
                     <div className="max-w-3xl mx-auto px-4 sm:px-6">

@@ -20,8 +20,8 @@ export function Footer()
                     href: '/contact'
                 },
                 {
-                    text: 'Промоакции',
-                    href: '#'
+                    text: 'Что нового ?',
+                    href: '/news'
                 },
                 {
                     text: 'Каталог продуктов',
