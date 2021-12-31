@@ -11,7 +11,7 @@ export function Table({children, thead = [], action = true, margin = 'pb-40', mo
     
     return (
         <div className="w-full overflow-hidden">
-            <Swiper scrollbar={{"hide": false}} mousewheel={mousewheel} className="bg-gray-50 dark:bg-gray-800">
+            <Swiper scrollbar={{"hide": false}} mousewheel={mousewheel} className="bg-gray-50 dark:bg-transparent">
                 <SwiperSlide className={margin}>
                     <table className={`w-full ${border}`}>
                         {/*divide-y divide-gray-200 align-middle inline-block min-  relative z-0 overflow-x-auto */}

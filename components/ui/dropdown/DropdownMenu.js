@@ -8,7 +8,7 @@ export function DropdownMenu({
     options = 'Select', 
     arrow = false, 
     func = '',
-    style = 'border rounded-r-md px-3 py-2 w-full bg-white dark:bg-gray-900',
+    style = 'border border-gray-50 dark:border-gray-800 text-gray-900 dark:text-gray-50 rounded-r-md px-3 py-2 w-full bg-white dark:bg-gray-900',
     link = 0,
     lists = []
 }) 

@@ -5,6 +5,7 @@ import { ProductData } from '../../../components/data/ProductData'
 import { MdContentCopy } from 'react-icons/md'
 import { FaEye } from 'react-icons/fa'
 import { ProductInformation } from '../../../components/block/product/details/ProductInformation'
+import { Variants } from '../../../components/block/product/details/Variants'
 import { Pricing } from '../../../components/block/product/details/Pricing'
 import { BreadCrumbs } from '../../../components/ui/page/BreadCrumbs'
 import { ArrowPanel } from '../../../components/ui/page/ArrowPanel'
@@ -18,6 +19,7 @@ export default function DetailProduct()
     const detailProduct = href ? ProductData().filter(name => name.href.includes(href))[0] : {} 
     const { id, image, title, type, vendor, stocks, SKU, price, quantity, variants } = detailProduct
     const Title = title
+
     const variable = [
         {href: '/dashboard/product', name: 'Products'}
     ]
@@ -50,6 +52,7 @@ export default function DetailProduct()
                             <Pricing details={detailProduct} />
                         </div>
                     </div>
+                    <Variants />
                 </div>                   
             </div>
         </MainLayout>

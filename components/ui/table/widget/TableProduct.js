@@ -9,14 +9,14 @@ import { DropdownMenu } from '../../dropdown/DropdownMenu'
 export function TableProduct({list = [], dropdown = []}) 
 {
     return (
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-black rounded-b-md">
         {list.map((item, index) => (
-            <tr key={index} className="border-b border-gray-50 bg-transparent hover:bg-gray-50">
+            <tr key={index} className="border-b border-gray-200 dark:border-0 bg-transparent dark:border-black dark:hover:bg-black hover:bg-gray-50">
                 <td className="px-5 py-2 whitespace-nowrap text-sm text-gray-500">
                     <label data-id={item.id}>
                         <input 
                             type="checkbox" 
-                            className="form-tick appearance-none h-5 w-5 border border-gray-300 rounded-md checked:bg-pink-600 checked:border-transparent focus:outline-none" 
+                            className="form-tick appearance-none h-5 w-5 border dark:border-gray-700 border-gray-300 rounded-md checked:bg-pink-600 checked:border-transparent focus:outline-none" 
                         />
                     </label>
                 </td>
@@ -29,14 +29,14 @@ export function TableProduct({list = [], dropdown = []})
                                 alt={item.title}
                             />
                             <div className="font-bold px-5">
-                                <h5 className="text-gray-500 hover:text-pink-600 text-sm mb-0">
+                                <h5 className="text-gray-500 dark:text-gray-50 dark:hover:text-pink-600 hover:text-pink-600 text-sm mb-0">
                                     {item.title}
                                 </h5>
                             </div>
                         </a>                                        
                     </Link>
                 </td>
-                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">
                     {item.type}
                 </td>
                 <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
@@ -51,25 +51,25 @@ export function TableProduct({list = [], dropdown = []})
                     </label>
                 </td>
                 <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
-                    <small className="bg-indigo-50 text-indigo-500 px-4 py-1 rounded-md font-medium">
+                    <small className="bg-indigo-50 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-200 px-4 py-1 rounded-md font-medium">
                         #{item.SKU}
                     </small>
                 </td>
                 <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
-                    <span className="bg-green-100 text-green-600 px-4 py-1 rounded-md font-bold">
+                    <span className="bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-50 px-4 py-1 rounded-md font-bold">
                         {PriceFormat(item.price)} ₽
                     </span>
                 </td>
-                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">
                     {item.quantity}
                 </td>
-                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500">
+                <td className="pl-5 pr-16 py-2 whitespace-nowrap text-sm text-gray-500 dark:text-gray-200">
                     {item.variants}
                 </td>
                 <td className="px-5 py-2 whitespace-nowrap text-sm text-gray-500">
                     <div className="flex" role="group">
                         <Link href="/dashboard/product/[href]" as={`/dashboard/product/${item.href}`}>
-                            <a className="flex items-center space-x-2 border border-r-0 rounded-l-md px-5 py-2 bg-white">
+                            <a className="flex items-center space-x-2 border border-r-0 border-gray-50 dark:border-gray-800 rounded-l-md px-5 py-2 bg-white dark:bg-gray-900 dark:hover:bg-gray-800 hover:bg-gray-50 text-gray-900 dark:text-gray-50">
                                 <FaPen className="w-3 h-3 text-gray-500" /> <span>Edit</span>
                             </a>
                         </Link>

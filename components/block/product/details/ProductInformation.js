@@ -7,6 +7,8 @@ import { Label } from '../../../ui/form/label'
 export function ProductInformation(props) 
 {
     const {GlobalClass} = useContext(ShopContext)
+    
+
     return (
         <>
             <GetCard 
@@ -16,14 +18,14 @@ export function ProductInformation(props)
             >
                 <div className="grid grid-cols-12 gap-5">
                     
-                    <div class="col-span-3">
+                    <div className="col-span-3">
                         <img 
                             src={props.details.image} 
                             alt={props.details.title} 
                             className="w-full object-cover rounded-md" 
                         />
                     </div>
-                    <div class="flex flex-col space-y-2 col-span-9">
+                    <div className="flex flex-col space-y-2 col-span-9">
                         <div>
                             <Label name="Имя" id="name" title="Продукты - товары или услуги, которые вы продаете." />
                             <input 
@@ -59,7 +61,7 @@ export function ProductInformation(props)
                         </div>
                     </div>
                     
-                    <div class="col-span-12">
+                    <div className="col-span-12">
                         <Label name="Описание" sub="(необязательно)" />
                         <textarea 
                             rows="5"
@@ -68,8 +70,8 @@ export function ProductInformation(props)
                             className={GlobalClass().InputClass+' resize-none'}
                         />
                     </div> 
-                    
                 </div>
+
                 {/* {<pre>{JSON.stringify(props.details, null, 4)}</pre>} */}
             </GetCard>
         </>

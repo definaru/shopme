@@ -12,3 +12,15 @@
 .link-dashed {
     @apply border-b border-dashed hover:border-solid text-gray-600 hover:text-pink-600 hover:border-pink-400 border-gray-600
 }
+.shopme-select__control {
+    @apply py-1 px-1 border-r-0 w-4/6 placeholder-gray-500 dark:placeholder-gray-600 dark:focus:bg-gray-800 bg-white dark:bg-transparent border border-gray-200 hover:border-gray-200 dark:border-gray-800 w-full focus:border-gray-300 focus:outline-none
+}
+.shopme-select__single-value {
+    @apply text-gray-900 dark:text-gray-300
+}
+.shopme-select__input-container {
+    @apply p-0 text-gray-900 dark:text-gray-300 text-center
+}
+.shopme-select__single-value {
+    @apply m-0
+}

@@ -13,7 +13,7 @@ export function Header()
     const toggle = () => setMenu(!menu)
 
     return (
-        <div className={`flex items-center justify-between w-full ${menu ? 'pl-20' : 'pl-64'} border-b border-gray-50 dark:border-black bg-white dark:bg-gray-900 fixed z-20 px-8 py-1`}>
+        <div className={`flex items-center justify-between w-full ${menu ? 'pl-20' : 'pl-64'} border-b border-gray-50 dark:border-gray-800 bg-white dark:bg-gray-900 fixed z-20 px-8 py-1`}>
             <div className="flex items-center">
                 <FiMenu onClick={toggle} className="cursor-pointer w-6 h-6 text-gray-500 dark:text-gray-50 ml-3 mr-5" />
                 <div className="flex items-center px-4 py-2 rounded bg-white dark:bg-gray-900 dark:hover:bg-gray-800 hover:bg-gray-100 focus:bg-gray-50">

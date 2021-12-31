@@ -12,6 +12,12 @@ body, html {
     font-family: 'Play', sans-serif;
 }
 
+.shopme-select .shopme-select__control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+}
+
 .dark .bg {
     background: #0d111a;
 }
@@ -62,6 +68,20 @@ body, html {
     background-color: #db2777 !important;
     color: #fff !important;
 }
+
+.react-datepicker__day--keyboard-selected {
+    background-color: #13181b !important;
+}
+.dark_calendar .react-datepicker__day--keyboard-selected {
+    background-color: #000 !important;
+}
+.dark_calendar .react-datepicker__day:hover, 
+.react-datepicker__month-text:hover, 
+.react-datepicker__quarter-text:hover, 
+.react-datepicker__year-text:hover {
+    background-color: #0d111a !important;
+}
+
 .dark_calendar .react-datepicker__day {color: #98a1ab;}
 .dark_calendar .react-datepicker__header {
     text-align: center;
@@ -100,6 +120,9 @@ body, html {
     position: relative;
     overflow: hidden;
 }
+.dark .nav-in:before {
+    border-top: 1px dotted #1f2937;
+}
 .nav-in:before {
     content: "";
     height: 1px;
@@ -113,8 +136,6 @@ body, html {
 .nav-in p:first-child {
     display: inline-block;
     vertical-align: top;
-    background-color: #fff;
-    color: #777;
     padding-right: 10px;
     max-width: calc(100% - 80px);
     max-width: -webkit-calc(100% - 80px);
@@ -130,12 +151,10 @@ body, html {
     display: inline-block;
     vertical-align: top;
     font-size: 14px;
-    color: #a7a8aa;
-    background-color: #fff;
     padding-left: 10px;
     top: 1px;
-    float: right;
-    position: relative;
+    position: absolute;
+    right: 0;
     z-index: 10;
 }
 

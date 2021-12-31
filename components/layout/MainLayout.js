@@ -11,7 +11,7 @@ import Cookie from 'js-cookie'
 import 'react-toastify/dist/ReactToastify.css'
 
 
-export function MainLayout({children, title = 'Page', description = '...'}) 
+export function MainLayout({children, title = 'Loading...', description = '...'}) 
 {
 
     const router = useRouter()
@@ -22,6 +22,7 @@ export function MainLayout({children, title = 'Page', description = '...'})
     const [cookie, setSookie] = useState(null)
     const [isLoading, setLoader] = useState(true)
     const [theme, setTheme] = useState(true)
+    const [currency, setCurrency] = useState('USD')
 
 
     useEffect(()=>{
@@ -64,6 +65,7 @@ export function MainLayout({children, title = 'Page', description = '...'})
             open, setOpen,
             menu, setMenu,
             theme, setTheme,
+            currency, setCurrency,
             GlobalClass,
             cookie, toast
         }}>
