@@ -6,6 +6,7 @@ import { ShopContext } from '../../context/ShopContext'
 
 export default function Dropdown({
     arrow = false,
+    image = false,
     style = 'text-base',
     list = []
 }) 
@@ -16,7 +17,13 @@ export default function Dropdown({
         <Menu as="div" className="relative inline-block text-left">
             <div>
                 <Menu.Button className={`text-gray-500 group bg-white rounded-md inline-flex items-center font-medium hover:text-gray-900 focus:outline-none ${style}`}>
-                    {lang}
+                    {image ? 
+                    <img 
+                        src={`/access/img/flags/${lang}.svg`} 
+                        className="w-7 h-5 object-cover shadow border-t" 
+                        alt={lang}
+                    /> 
+                    : lang}
                     {arrow ? <ChevronDownIcon className="-mr-1 ml-2 w-5 h-5 text-gray-400" /> : ''}
                 </Menu.Button>
             </div>   

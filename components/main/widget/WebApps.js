@@ -67,8 +67,8 @@ export function WebApps()
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <Menu.Items className="absolute right-0 w-80 mt-2 origin-top-right bg-white dark:bg-gray-800 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="px-6 py-3 border-b border-gray-50 dark:border-gray-700">
+                <Menu.Items className="absolute right-0 w-80 mt-2 origin-top-right bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="px-6 py-3 border-b border-gray-50 dark:border-gray-900">
                         <h2 className="text-black dark:text-white font-semibold text-md">
                             {'Web apps & services'}
                         </h2>
@@ -77,7 +77,7 @@ export function WebApps()
                         autoHide
                         universal 
                         autoHideTimeout={500}
-                        style={{ width: '100%', height: 250, border: 'none' }}
+                        style={{ width: '100%', height: 197, border: 'none' }}
                     >
                         <div className="p-0">
                             {onData?.map((item, i) => (
@@ -109,7 +109,7 @@ export function WebApps()
                     </Scrollbars>
                     <div className="p-0">
                         <Link href="/dashboard/apps">
-                            <a className="px-6 py-4 rounded-b-md border-t border-gray-50 dark:border-gray-900 flex items-center justify-center text-pink-600 text-sm bg-white dark:bg-gray-800 hover:text-gray-800 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-900">
+                            <a className="px-6 py-4 rounded-b-md border-t border-gray-50 dark:border-gray-900 flex items-center justify-center text-white text-sm bg-white dark:bg-gray-800 hover:text-gray-800 dark:hover:text-pink-600 hover:bg-gray-50 dark:hover:bg-black">
                                 Смотреть все приложения <FiChevronsRight className="ml-3 w-4" />
                             </a>
                         </Link>

@@ -18,6 +18,7 @@ export function SelectCurrency({classes})
     return (
         <>
             <Select 
+                closeMenuOnSelect={false}
                 options={options} 
                 onChange={onSelect}
                 defaultValue={options[0]}

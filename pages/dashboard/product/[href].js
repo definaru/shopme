@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { MainLayout } from '../../../components/layout/MainLayout'
 import { ProductData } from '../../../components/data/ProductData'
@@ -19,6 +19,12 @@ export default function DetailProduct()
     const detailProduct = href ? ProductData().filter(name => name.href.includes(href))[0] : {} 
     const { id, image, title, type, vendor, stocks, SKU, price, quantity, variants } = detailProduct
     const Title = title
+
+    useEffect(() => {
+        if(detailProduct === undefined) {
+            setTimeout(() => {router.push('/404')}, 5000) 
+        }
+    }, [detailProduct])
 
     const variable = [
         {href: '/dashboard/product', name: 'Products'}

@@ -17,6 +17,10 @@ body, html {
     border-bottom-left-radius: 0;
     outline: none;
 }
+.dark .shopme-select__menu {
+    background: #0d111a;
+    color: #f9fafb;
+}
 
 .dark .bg {
     background: #0d111a;

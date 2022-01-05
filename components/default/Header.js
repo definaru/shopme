@@ -218,6 +218,7 @@ export function Header()
                             </Popover>
                             <Dropdown 
                                 arrow={true}
+                                image={true}
                                 list={[
                                     {current: 'ru', header: 'Русский'},
                                     {current: 'en', header: 'English'},

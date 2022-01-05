@@ -6,8 +6,26 @@ import { GetCard } from '../../../ui/card/GetCard'
 
 export function Variants() 
 {
-    const [str, setStr] = useState(1)
+
+    const datetime  = (new Date()).toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })
     const {currency, setCurrency, GlobalClass} = useContext(ShopContext)
+    const dataBase = [
+        {
+            id: '1',
+            datetime: datetime,
+            size: '',
+            color: '',
+            price: '',
+            quantity: '1',
+            currency: currency
+        }
+    ]
+    const [str, setStr] = useState(1)
+    const [variable, setVariable] = useState(dataBase)
+    
+    const Delete = (id) => {
+        setVariable(dataBase.filter((e) => e.id !== id ))
+    }
 
     return (
         <div className="grid mb-40">

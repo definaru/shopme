@@ -47,15 +47,24 @@ export function ProductInformation(props)
                             </div>
                             <div>
                                 <Label name="Масса" />
-                                <input 
-                                    type="text" 
-                                    placeholder="0,0" 
-                                    defaultValue={''}
-                                    className={GlobalClass().InputClass}
-                                /> 
+                                <div className="flex">
+                                    <input 
+                                        type="text" 
+                                        placeholder="0,0" 
+                                        defaultValue={''}
+                                        className={GlobalClass('rounded-l-md border-r-0 md:w-3/5').InputClass}
+                                    /> 
+                                    <select value={'фунт'} className={GlobalClass('rounded-r-md md:w-2/5').InputClass}>
+                                        <option value={'фунт'}>фунт</option>
+                                        <option value={'унция'}>унция</option>
+                                        <option value={'кг'}>кг</option>
+                                        <option value={'г'}>г</option>
+                                    </select>                          
+                                </div>
+
                                 <small className="text-gray-400 block mt-2 text-xs leading-tight">
-                                <p>Используется для расчета стоимости доставки при оформлении 
-                                заказа и маркировки цен во время выполнения заказа.</p>
+                                    Используется для расчета стоимости доставки при оформлении 
+                                    заказа и маркировки цен во время выполнения заказа.
                                 </small>
                             </div>
                         </div>

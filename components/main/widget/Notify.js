@@ -92,7 +92,7 @@ export function Notify()
                         autoHide
                         universal 
                         autoHideTimeout={500}
-                        style={{ width: '100%', height: 250, border: 'none' }}
+                        style={{ width: '100%', height: 240, border: 'none' }}
                     >
                         <div className="p-0">
                             {onData?.map((item, i) => (

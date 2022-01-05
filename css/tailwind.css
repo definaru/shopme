@@ -24,3 +24,15 @@
 .shopme-select__single-value {
     @apply m-0
 }
+.shopme-select__value-container--has-value:hover {
+    @apply shadow-none
+}
+.select-tag__control {
+    @apply border border-gray-100 dark:border-gray-800 placeholder-gray-500 dark:placeholder-gray-600 dark:focus:bg-gray-800 bg-white dark:bg-transparent
+}
+.select-tag__multi-value {
+    @apply bg-white dark:bg-gray-800 dark:hover:bg-pink-600 hover:bg-pink-600
+}
+.select-tag__multi-value__label {
+    @apply text-gray-900 dark:text-gray-50
+}
