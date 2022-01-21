@@ -1,0 +1,56 @@
+.crop::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: -moz-linear-gradient(left, rgba(255,255,255, 0.2), #fcfcfc 100%);
+    background: -webkit-linear-gradient(left, rgba(255,255,255, 0.2), #fcfcfc 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255, 0.2), #fcfcfc 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255, 0.2), #fcfcfc 100%);
+    background: linear-gradient(to right, rgba(255,255,255, 0.2), #fcfcfc 100%);
+}
+
+.how_message {
+    width: 100%;
+    overflow: hidden;
+    height: 16px;
+    display: block;
+}
+
+::-webkit-scrollbar-button {
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:6px;
+    height:0px
+}
+
+::-webkit-scrollbar-track {
+    background-color:#32312e;
+    box-shadow:0px 0px 3px #000 inset;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#b8babd;
+    box-shadow:0px 1px 1px #fff inset;
+    background-image:url('https://yraaa.ru/_pu/24/59610063.png');
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:7px;
+    height:0px
+}
+
+::-webkit-scrollbar{
+    width: 11px;
+}
+.cp {cursor: pointer}
+
+.tippy-popper {display: none;}

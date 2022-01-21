@@ -1,0 +1,1 @@
+<?php    $this->title = 'Обновить страницу';    $this->header = $model->title;    $this->params['breadcrumbs'][] = ['label' => 'Страницы', 'url' => ['index']];    $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];    $this->params['breadcrumbs'][] = $this->title;?><?= $this->render('_form', ['model' => $model,]) ?>

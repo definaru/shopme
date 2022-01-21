@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/*
+Author: Inc.Defina
+LICENSE: GNU General Public License v3.0
+URL LICENSE: https://github.com/DefinaCorporation/Defina/blob/master/LICENSE
+WebSite: https://defina.ru
+E-mail: info@defina.ru
+*/
+
+@media screen and (max-width:767px) {
+    .xs-left {text-align: left;}
+    .xs-right {text-align: right;}
+    .xs-center {text-align: center;}
+    .xs-justify {text-align: justify;}  
+    .sea{width:100%;}
+    H1{font-size:30px;}
+    H2{font-size:25px;}
+    H3{font-size:20px;}
+    H4{font-size:18px;}
+    H5{font-size:16px;}
+    H6{font-size:14px;}
+    p {font-size:10px;}
+    .lead {
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .sm-left {text-align: left;}
+    .sm-right {text-align: right;}
+    .sm-center {text-align: center;}
+    .sm-justify {text-align: justify;}
+    .sea{width:auto;}
+    H1{font-size:32px;}
+    H2{font-size:27px;}
+    H3{font-size:22px;}
+    H4{font-size:20px;}
+    H5{font-size:18px;}
+    H6{font-size:16px;}
+    p {font-size:12px;}
+    .lead {
+        font-size: 16px;
+        font-weight: 300;
+    }    
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .md-left {text-align: left;}
+    .md-right {text-align: right;}
+    .md-center {text-align: center;}
+    .md-justify {text-align: justify;}   
+    .sea{width:auto;}
+    H1{font-size:34px;}
+    H2{font-size:30px;}
+    H3{font-size:27px;}
+    H4{font-size:20px;}
+    H5{font-size:18px;}
+    H6{font-size:16px;}
+    p {font-size:14px;}
+    .lead {
+        font-size: 18px;
+        font-weight: 300;
+    }    
+}
+@media screen and (min-width: 1200px) {
+    .lg-left{text-align: left;}
+    .lg-right{text-align: right;}
+    .lg-center{text-align: center;}
+    .lg-justify{text-align: justify;} 
+    .sea{width:auto;}
+    H1{font-size:40px;}
+    H2{font-size:35px;}
+    H3{font-size:30px;}
+    H4{font-size:25px;}
+    H5{font-size:20px;}
+    H6{font-size:18px;}
+    p {font-size:16px;}
+    .lead {
+        font-size: 22px;
+        font-weight: 400;
+    }  
+    .tree-panel {
+        position: relative;top: -200px;
+    }
+}

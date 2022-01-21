@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+.text-warning {
+    color: #ffcc33 !important;
+}
+.display_comp {
+    box-shadow: 1px -1px 3px 13px #111, 1px 8px 13px 4px #222, 1px -2px 2px 16px #d4d4d4;
+    background: #000;
+} 
+.checkstyle {
+    display: block;
+    position: relative;
+    padding-left: 13px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    bottom: -5px;
+}
+
+.checkstyle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.checkstyle:hover input ~ .checkmark {background-color: #ccc;}
+.checkstyle input:checked ~ .checkmark {background-color: #d13a7a;}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkstyle input:checked ~ .checkmark:after {display: block;}
+
+.checkstyle .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+th .checkstyle:first-child {
+    margin-top: -27px;
+    margin-bottom: 5px;
+}
+
+
+.mmd {
+    width: 100%;
+    text-align: left !important;
+}
+.nobrborder {
+    margin-top: -1px !important;
+    border-radius: 0 !important;
+    border: none;
+}
+.comp{
+    background: url(/img/comp.png) no-repeat center bottom / cover;
+    width: 503px;
+    height: 92px;
+    position: relative;
+    left: -19.5%;
+}
+.style30 {
+    display: block;
+    background: #fff;
+}
+
+.white{
+    color:#fff;
+}
+
+#defina i {
+    font-size: 150px;
+    opacity: 0.5;
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+    font-size: 140px;
+}
+#defina:hover  i{
+    font-size: 150px;
+    opacity: 0.9;
+}
+#defina a {
+    width: 100%;
+    padding: 44px 0;
+    height: 310px;
+}
+#defina h1 {
+    color: rgba(0, 0, 0, 0.51);
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;    
+}
+#defina:hover h1 {
+    color: rgba(255, 255, 255, 0.51);
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;    
+}

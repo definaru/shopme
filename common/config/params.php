@@ -1,0 +1,1 @@
+<?php    return [        'adminEmail' => 'admin@vera.fund',        'infoEmail' => 'info@vera.fund',        'supportEmail' => 'support@vera.fund',        'user.passwordResetTokenExpire' => 3600,    ];

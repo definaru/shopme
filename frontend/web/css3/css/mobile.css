@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* 
+    Created on : 31.07.2017, 4:10:38
+    Author     : Inc. Defina
+*/
+
+
+@media screen and (max-width:767px) {
+    .xs-left {text-align: left;}
+    .xs-right {text-align: right;}
+    .xs-center {text-align: center;}
+    .xs-justify {text-align: justify;}  
+    p{font-size: 12px;}
+    .sea{width:100%;}
+    .popover {min-width: 100%;}
+    #filter, .modal-lg {
+        width: 100%;
+    }
+    #filter, .modal {
+        background: #fff;
+    }    
+
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .sm-left {text-align: left;}
+    .sm-right {text-align: right;}
+    .sm-center {text-align: center;}
+    .sm-justify {text-align: justify;} 
+    p{font-size: 14px;}
+    .sea{width:auto;}
+    .popover {min-width: auto;}
+    #filter, .modal-lg {
+        width: 100%;
+    }  
+    #filter, .modal {
+        background: #fff;
+    } 
+   
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .md-left {text-align: left;}
+    .md-right {text-align: right;}
+    .md-center {text-align: center;}
+    .md-justify {text-align: justify;} 
+    p{font-size: 16px;}
+    .sea{width:auto;}
+    .popover {min-width: 500px;}
+    #filter, .modal-lg {
+        width: 100%;
+    } 
+    #filter, .modal {
+        background: #fff;
+    } 
+  
+}
+
+@media screen and (min-width: 1200px) {
+    .lg-left{text-align: left;}
+    .lg-right{text-align: right;}
+    .lg-center{text-align: center;}
+    .lg-justify{text-align: justify;}    
+    p{font-size: 16px;}
+    .sea{width:auto;}
+    .popover {min-width: 700px;}
+    #filter, .modal-lg {
+        width: 100%;
+    } 
+    #filter, .modal {
+        background: #fff;
+    } 
+    #filter label {
+        display: inline-block;
+        margin-bottom: 0px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        font-size: 12px;
+        overflow: hidden;
+        height: 18px;
+    }  
+
+}
