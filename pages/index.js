@@ -130,7 +130,7 @@ export default function Home()
                     <img 
                         src="/access/img/laptop.png" 
                         alt="laptop" 
-                        className="w-full md:w-3/5 pt-5" 
+                        className="w-full md:w-3/5 pt-28" 
                     />
                 </div>                
             </div>
