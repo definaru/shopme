@@ -22,7 +22,9 @@ export default function Price()
     const Check = <GoCheck className="w-5 h-5 mr-2 font-semibold leading-7 text-pink-600 sm:h-5 sm:w-5 md:h-6 md:w-6" />
     const datetime  = (new Date()).toLocaleDateString('ru-RU', { year: 'numeric', month: 'numeric', day: 'numeric' })
     const transaction = new Date().getTime()
-    const new_date = moment(datetime, "DD-MM-YYYY").add(1, 'months').calendar()
+    const months_date = moment(datetime, "DD-MM-YYYY").add(1, 'months').calendar()
+    const years_date  = moment(datetime, "DD-MM-YYYY").add(1, 'years').calendar()
+
 
     const currency = (e) => {
         if(e === 'EUR') return '€';
@@ -101,7 +103,7 @@ export default function Price()
                                     <p className="font-bold text-xl mb-5">Итог заказа</p>
                                     <div className="flex justify-between">
                                         <div>
-                                            <p className="font-medium text-lп mb-5">Общее количество</p>
+                                            <p className="font-medium text-lп mb-3">Общее количество</p>
                                         </div>
                                         <div>
                                             {plan.price}.00 
@@ -110,13 +112,13 @@ export default function Price()
                                         </div>
                                     </div>
 
-                                    <div className="bg-indigo-100 px-6 py-4 rounded text-indigo-500">
+                                    <div className="bg-indigo-100 px-6 py-2 rounded text-indigo-500">
                                         <p className="font-bold text-lg">Сегодня</p>
-                                        <div className="flex items-center space-x-2 text-base">
+                                        <div className="flex items-center space-x-2 text-sm">
                                             <div>Рассчитано на</div>
                                             <div className="flex text-sm">
-                                                {datetime}&#160;-
-                                                <Moment date={new_date} format="DD:MM:YYYY" />
+                                                {datetime}&#160;-&#160;
+                                                <Moment date={plan.duration == 12 ? years_date : months_date} format="DD.MM.YYYY" />
                                             </div>
                                         </div>
                                     </div>
@@ -124,24 +126,27 @@ export default function Price()
                                         <p className="font-medium text-lп mt-3">
                                             Платежная информация:
                                         </p>
-                                        
                                         <div className="flex bg-green-50 px-6 py-4">
                                             <ImCreditCard className="text-5xl mr-4 text-green-300" />
                                             <div>
-                                                <p>Card: 
+                                                <div className="flex space-x-1 items-center">
+                                                    <div>Card:&#160;</div>
+                                                    <div className="mt-1.5">{' **** **** **** '}</div> 
                                                     <small>
-                                                        {parseInt(pay.valid_card).toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ")}
+                                                        {parseInt(pay.valid_card).toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ").substr(15)}
                                                     </small>
-                                                </p>
-                                                <p><small>month/year: {pay.month} / {pay.year}</small></p>                                                
+                                                </div>
+                                                <p className="text-green-500">
+                                                    <small>validity: {pay.month}/{pay.year.substr(2)}</small>
+                                                </p>                                                
                                             </div>
                                         </div>
                                         
                                         <p className="text-xs text-gray-400 text-center my-4">
                                             Нажимая «Завершить заказ», вы соглашаетесь с 
-                                            <a href="#" className="text-gray-500 no-underline hover:underline">Условия использования торговой площадки</a>, 
-                                            <a href="#" className="text-gray-500 no-underline hover:underline">Условия предоставления услуг</a> и 
-                                            <a href="#" className="text-gray-500 no-underline hover:underline">Политика конфиденциальности</a>.
+                                            &#160;<a href="#" className="text-gray-500 no-underline hover:underline">Условия использования торговой площадки</a>, 
+                                            &#160;<a href="#" className="text-gray-500 no-underline hover:underline">Условия предоставления услуг</a> и 
+                                            &#160;<a href="#" className="text-gray-500 no-underline hover:underline">Политика конфиденциальности</a>.
                                         </p>
                                         <Link href={`?amout=${pay.uid}`}>
                                             <a className="w-full whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border rounded-md shadow-sm text-base font-medium text-white bg-pink-600 hover:bg-pink-700">
@@ -151,7 +156,6 @@ export default function Price()
                                         <p className="text-xs text-gray-600 text-center mt-2">
                                             Далее: Разрешите ShopMe получить доступ к вашей учетной записи.
                                         </p>
-                                        {/* {pay ? <pre>{JSON.stringify(pay, null, 4)}</pre> : ''}  */}
                                     </div>
                                 </div>                                 
                             </div>
