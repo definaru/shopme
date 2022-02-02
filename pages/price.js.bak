@@ -1,51 +1,29 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import React, { useState, useCallback, useEffect } from 'react'
 import SmoothScroll from 'smooth-scroll/dist/smooth-scroll'
 import { ImCreditCard } from 'react-icons/im'
 import { Disclosure } from '@headlessui/react'
 import { IndexLayout } from '../components/layout/IndexLayout'
 import { FooterAction } from '../components/block/partner/FooterAction'
-import { useCryptoGenerator } from '../components/helper/crypto/useCryptoGenerator'
-import { useDateTime } from '../components/helper/time/useDateTime'
-import { useCryptCard } from '../components/helper/pay/useCryptCard'
 import { GoCheck } from 'react-icons/go'
-import { Listcard } from '../components/ui/page/ListCard'
 import CountUp from 'react-countup'
-import Moment from 'react-moment'
+import Moment from 'react-moment';
+import moment from 'moment'
 
 
 export default function Price() 
 {
-
     const Title = 'Таблица цен'
     const Description = 'Платформа `Shop Me`, расценки и прайс-лист.'
-
     const [price, setPrice] = useState(true)
     const [plan, setPlan] = useState('')
     const [user, setUser] = useState('')
     const [pay, setPay] = useState('')
-
-
-    const router = useRouter()
-    const {amout} = router.query
-
     const Check = <GoCheck className="w-5 h-5 mr-2 font-semibold leading-7 text-pink-600 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-    const {datetime, transaction, months_date, years_date} = useDateTime()
-
-    const float = transaction/3
-    const action = float.toFixed()
-
-    const datatest = {
-        invoice: action,
-        plan,
-        user,
-        pay
-    }
-    const result = useCryptoGenerator(datatest)
-    const card   = useCryptCard(pay?.valid_card)
-    const {blank, encodecard, decodecard} = card
-    const token  = result.encode
+    const datetime  = (new Date()).toLocaleDateString('ru-RU', { year: 'numeric', month: 'numeric', day: 'numeric' })
+    const transaction = new Date().getTime()
+    const months_date = moment(datetime, "DD-MM-YYYY").add(1, 'months').calendar()
+    const years_date  = moment(datetime, "DD-MM-YYYY").add(1, 'years').calendar()
 
 
     const currency = (e) => {
@@ -91,14 +69,11 @@ export default function Price()
                     {plan ?
                         <div className="table w-full my-20">
                             <div className="">
-                                <h2 className="font-extrabold text-3xl mb-8">
-                                    Просмотрите заказ
-                                </h2>
-                                {/* <p>{amout}</p> */}
+                                <h2 className="font-extrabold text-3xl mb-8">Просмотрите заказ</h2>
                             </div>
                             <div className="grid grid-cols-2 gap-10">
-                                <div className="relative p-8 rounded shadow-lg bg-white flex flex-col border-t-4 border-indigo-600">
-                                    <p className="font-medium text-xl mb-5">Счет: #{action}</p>
+                                <div className="p-8 rounded shadow-lg bg-white flex flex-col border-t-4 border-indigo-600">
+                                    <p className="font-medium text-xl mb-5">Счет: #{transaction}</p>
                                     <div className="text-gray-500 cursor-pointer no-underline hover:underline" onClick={() => setPlan('')}>
                                         {/* Choose another plan */}
                                         Выбрать другой план
@@ -122,7 +97,6 @@ export default function Price()
                                             </div>
                                         </div>
                                     : 'Loading...'}
-                                    <Listcard />
                                 </div>
 
                                 <div className="p-8 rounded shadow-lg bg-white border-t-4 border-green-400">
@@ -157,14 +131,13 @@ export default function Price()
                                             <div>
                                                 <div className="flex space-x-1 items-center">
                                                     <div>Card:&#160;</div>
-                                                    <div className="mt-1.5">{blank}</div> 
+                                                    <div className="mt-1.5">{' **** **** **** '}</div> 
                                                     <small>
-                                                        {encodecard}
+                                                        {parseInt(pay.valid_card).toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ").substr(15)}
                                                     </small>
-                                                    
                                                 </div>
                                                 <p className="text-green-500">
-                                                    <small>validity: {pay.month}/{pay.year.slice(2)}</small>
+                                                    <small>validity: {pay.month}/{pay.year.substr(2)}</small>
                                                 </p>                                                
                                             </div>
                                         </div>
@@ -175,7 +148,7 @@ export default function Price()
                                             &#160;<a href="#" className="text-gray-500 no-underline hover:underline">Условия предоставления услуг</a> и 
                                             &#160;<a href="#" className="text-gray-500 no-underline hover:underline">Политика конфиденциальности</a>.
                                         </p>
-                                        <Link href={`?amout=${token}`}>
+                                        <Link href={`?amout=${pay.uid}`}>
                                             <a className="w-full whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border rounded-md shadow-sm text-base font-medium text-white bg-pink-600 hover:bg-pink-700">
                                                 Завершить заказ
                                             </a>                                            

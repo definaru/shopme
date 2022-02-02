@@ -1,9 +1,10 @@
 require('dotenv').config()
 
-//const isProd = process.env.NODE_ENV === 'production' ? 'https://r7v7r9i8.stackpathcdn.com' : ''
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
     trailingSlash: false,
+    assetPrefix: isProd ? 'https://shopme.ee' : '',
     generateBuildId: async () => {
         return 'shopme'
     },
@@ -47,9 +48,10 @@ module.exports = {
         webpack5: false,
     },
     env: {
-        NEXT_PUBLIC_GTM: process.env.NEXT_PUBLIC_GTM,
         API_ENV: process.env.API_ENV,
+        NEXT_PUBLIC_GTM: process.env.NEXT_PUBLIC_GTM,
         URL_API_ADDRESS: process.env.URL_API_ADDRESS,
+        SECRET_KEY: process.env.SECRET_KEY,
     },
     // i18n: {
     //     locales: ['en-US', 'fr', 'nl-NL'],
