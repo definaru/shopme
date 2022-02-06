@@ -1,4 +1,4 @@
-import { Fragment, useContext } from 'react'
+import { useEffect, Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, CheckIcon } from '@heroicons/react/solid'
 import { ShopContext } from '../../context/ShopContext'
@@ -12,6 +12,12 @@ export default function Dropdown({
 }) 
 {
     const {lang, setLang} = useContext(ShopContext)
+
+    useEffect(() => {
+        const langues = localStorage.getItem('lang') ? localStorage.getItem('lang') : lang
+        localStorage.setItem('lang', langues)   
+        setLang(langues)    
+    }, []);
 
     return (
         <Menu as="div" className="relative inline-block text-left">

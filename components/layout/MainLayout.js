@@ -26,8 +26,8 @@ export function MainLayout({children, title = 'Loading...', description = '...'}
 
 
     useEffect(()=>{
-        localStorage.setItem('lang', 'ru')
-        //console.log('memory', localStorage.getItem('lang'))
+        localStorage.setItem('lang', localStorage.getItem('lang'))
+        setUser(JSON.parse(sessionStorage.getItem('user')))
     },[])
 
 
@@ -50,14 +50,6 @@ export function MainLayout({children, title = 'Loading...', description = '...'}
             setSookie(Cookie.get())
         }
     }, [isLoading, router])
-
-
-    useEffect(() => {
-        if(user === null) {
-            sessionStorage.removeItem('user')
-            return router.push('/login')
-        } 
-    }, [user])
 
     return (
         <ShopContext.Provider value={{

@@ -12,16 +12,22 @@ export function IndexLayout({children, image = '/access/img/image.jpg', title = 
 
     const router = useRouter()
     const status = GetStoreData()
+
     const [lang, setLang] = useState('ru')
     const [user, setUser] = useState(null)
     const { cookie, web } = status
-
+    
     useEffect(()=>{
+        //JSON.parse()
         localStorage.setItem('lang', lang)
-        sessionStorage.setItem('user', user)
-        setUser(sessionStorage.getItem('user'))
-        setLang(localStorage.getItem('lang'))
-        //console.log('Lang:', localStorage.getItem('lang'))
+        //setLang(localStorage.getItem('lang')) 
+
+        //sessionStorage.setItem('user', user)
+        setUser(JSON.parse(sessionStorage.getItem('user')))
+
+        console.log('IndexLayout', user)
+        console.log('sessionStorage:', JSON.parse(sessionStorage.getItem('user')))
+
     },[lang])
 
     return (

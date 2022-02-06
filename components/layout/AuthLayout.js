@@ -5,7 +5,9 @@ import { Languech } from '../block/index/lang/Languech'
 import { CheckIcon } from '@heroicons/react/solid'
 import { useRouter } from 'next/router'
 import { ShopContext } from '../context/ShopContext'
+import { ToastContainer, toast } from 'react-toastify'
 import Cookie from 'js-cookie'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export function AuthLayout({
@@ -18,10 +20,11 @@ export function AuthLayout({
     const router = useRouter()
     const [cookie, setSookie] = useState(null)
     const [isLoading, setLoader] = useState(true)
+    const [valid, setValid] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
-        localStorage.setItem('lang', 'ru')
-        console.log('memory', localStorage.getItem('lang'))
+        localStorage.setItem('lang', localStorage.getItem('lang'))
     },[])
 
     useEffect(() => {
@@ -46,7 +49,9 @@ export function AuthLayout({
 
     return (
         <ShopContext.Provider value={{
-            cookie
+            cookie, toast,
+            valid, setValid,
+            loading, setLoading
         }}>
             <Head>
                 <title>{title}</title>
@@ -102,6 +107,17 @@ export function AuthLayout({
                 <div className="bg-white px-8 py-5 md:px-10 md:py-10">
                     {children}
                 </div>
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={false}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </div>        
         </ShopContext.Provider>
     )
