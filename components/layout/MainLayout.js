@@ -15,8 +15,8 @@ export function MainLayout({children, title = 'Loading...', description = '...'}
 {
 
     const router = useRouter()
-    const curr_user = User()
-    const [user, setUser] = useState(curr_user)
+    //const curr_user = User()
+    const [user, setUser] = useState(null)
     const [open, setOpen] = useState(false)
     const [menu, setMenu] = useState(false)
     const [cookie, setSookie] = useState(null)
@@ -28,6 +28,9 @@ export function MainLayout({children, title = 'Loading...', description = '...'}
     useEffect(()=>{
         localStorage.setItem('lang', localStorage.getItem('lang'))
         setUser(JSON.parse(sessionStorage.getItem('user')))
+        if(sessionStorage.getItem('user') === null) {
+            router.push('/login')
+        }
     },[])
 
 
@@ -50,6 +53,7 @@ export function MainLayout({children, title = 'Loading...', description = '...'}
             setSookie(Cookie.get())
         }
     }, [isLoading, router])
+
 
     return (
         <ShopContext.Provider value={{

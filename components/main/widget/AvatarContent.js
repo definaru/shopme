@@ -16,9 +16,11 @@ export function AvatarContent()
 
     const handleClick = (e) => {
         e.preventDefault()
-        alert('Уверены что хотите выйти ?')
-        toast.success("Все сессии прерваны. До встречи!", { theme: "colored" })
-        setTimeout(() => {router.push('/login?status=logout')}, 500)
+        const quest = confirm('Уверены что хотите выйти ?')
+        if(quest) {
+            toast.success("Все сессии прерваны. До встречи!", { theme: "colored" })
+            setTimeout(() => {router.push('/login?status=logout')}, 500)            
+        } return
     }
 
     return (
@@ -26,8 +28,8 @@ export function AvatarContent()
             <div>
                 <Menu.Button className="focus:outline-none">
                     <img 
-                        src={user.avatar} 
-                        alt={user.username+' '+user.lastname} 
+                        src={user?.avatar} 
+                        alt={user?.username+' '+user?.lastname} 
                         className="object-cover object-center border-4 border-gray-100 dark:border-gray-800 w-10 h-10 rounded-full cursor-pointer" 
                     />
                     <FaCircle className="text-green-600 w-3 h-3 absolute bottom-1 right-1 border-2 border-white dark:border-gray-800 rounded-full" />
@@ -49,8 +51,8 @@ export function AvatarContent()
                                 <Link href="/dashboard/profile">
                                     <a>
                                         <img 
-                                            src={user.avatar} 
-                                            alt={user.username+' '+user.lastname}  
+                                            src={user?.avatar} 
+                                            alt={user?.username + ' ' + user?.lastname}  
                                             className="object-cover object-center border-4 border-gray-100 dark:border-gray-900 w-12 h-12 rounded-full" 
                                         />                                        
                                     </a>
@@ -59,12 +61,12 @@ export function AvatarContent()
                             <div className="flex flex-col text-sm">
                                 <Link href="/dashboard/profile">
                                     <a className="font-semibold no-underline hover:underline text-gray-900 dark:text-gray-200 hover:text-gray-600">
-                                        {user.username+' '+user.lastname} 
+                                        {user?.username + ' ' + user?.lastname} 
                                     </a>
                                 </Link>
                                 <p className="overflow-ellipsis overflow-hidden block w-36 text-gray-400">
                                     <small>
-                                        {user.email} 
+                                        {user?.email} 
                                     </small>
                                 </p>
                             </div>

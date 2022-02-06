@@ -4,6 +4,7 @@ import { VscLoading } from 'react-icons/vsc'
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import { useCryptoGenerator } from '../../helper/crypto/useCryptoGenerator'
+import { FormFeedback } from '../../widget/FormFeedback'
 import { ShopContext } from '../../context/ShopContext'
 
 
