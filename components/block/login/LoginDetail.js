@@ -39,7 +39,7 @@ export function LoginDetail(props)
                 id: 1,
                 email: valid.email,
                 token: result.encode,
-                avatar: 'https://randomuser.me/api/portraits/med/women/13.jpg',
+                avatar: 'https://randomuser.me/api/portraits/med/women/14.jpg',
                 username: 'Lola',
                 lastname: 'Matthews'
             }
@@ -68,6 +68,10 @@ export function LoginDetail(props)
                     </label>
                     <input 
                         type="text"
+						autoComplete="off" 
+						autoCorrect="off" 
+						autoCapitalize="words" 
+						spellCheck="false"
                         {...register('email', { 
                             required: true,
                             pattern: /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-0-9A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u,

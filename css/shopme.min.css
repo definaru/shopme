@@ -263,3 +263,18 @@ input:checked + .slider:before {
     border-left: solid 1px #aaa;    
     background-color: #eee;
 }
+.dark .swal2-popup {
+    background: #222;
+    color: #ffffff;
+}
+
+.dark .swal2-title {
+    color: #bbb4b8;
+}
+.dark .swal2-html-container {
+    color: #ffffff;
+}
+.dark .swal2-icon.swal2-question {
+    border-color: #1f8fbf;
+    color: #1f8fbf;
+}

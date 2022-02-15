@@ -1,26 +1,36 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Fragment, useContext } from 'react'
+import { useEffect, Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { FiLogOut, FiUser, FiSliders } from 'react-icons/fi'
 import { FaCircle } from 'react-icons/fa'
 import { ShopContext } from '../../context/ShopContext'
+import { GetModal } from '../../ui/modal/GetModal'
 
 
 export function AvatarContent() 
 {
 
     const router = useRouter()
-    const { user, toast } = useContext(ShopContext)
+    const { theme, user, toast } = useContext(ShopContext)
     const ClassStyle = 'text-gray-600 dark:text-gray-300 hover:text-pink-600 dark:hover:bg-gray-900 hover:bg-gray-50 flex rounded-md items-center w-full px-2 py-2 text-sm'
+    
+    useEffect(() => {
+        theme ? document.body.classList.add('dark') : document.body.classList.remove('dark')
+    }, [theme])
 
+    const Logout = () => {
+        toast.success("Все сессии прерваны. До встречи!", { theme: "colored" })
+        setTimeout(() => {router.push('/login?status=logout')}, 500)        
+    }
     const handleClick = (e) => {
         e.preventDefault()
-        const quest = confirm('Уверены что хотите выйти ?')
-        if(quest) {
-            toast.success("Все сессии прерваны. До встречи!", { theme: "colored" })
-            setTimeout(() => {router.push('/login?status=logout')}, 500)            
-        } return
+        GetModal(
+            'Подтвердите действие',
+            'Уверены что хотите выйти ?',
+            'question',
+            Logout
+        )
     }
 
     return (

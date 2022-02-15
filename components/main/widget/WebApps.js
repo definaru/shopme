@@ -109,7 +109,7 @@ export function WebApps()
                     </Scrollbars>
                     <div className="p-0">
                         <Link href="/dashboard/apps">
-                            <a className="px-6 py-4 rounded-b-md border-t border-gray-50 dark:border-gray-900 flex items-center justify-center text-white text-sm bg-white dark:bg-gray-800 hover:text-gray-800 dark:hover:text-pink-600 hover:bg-gray-50 dark:hover:bg-black">
+                            <a className="px-6 py-4 rounded-b-md border-t border-gray-50 dark:border-gray-900 flex items-center justify-center text-gray-900 text-sm bg-white dark:bg-gray-800 hover:text-gray-800 dark:hover:text-pink-600 hover:bg-gray-50 dark:hover:bg-black">
                                 Смотреть все приложения <FiChevronsRight className="ml-3 w-4" />
                             </a>
                         </Link>
