@@ -2,6 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+<br />
+<img src="https://github.com/definaru/shopme/actions/workflows/main.yml/badge.svg?branch=main" />
+<br />
+
 First, run the development server:
 
 ```bash
