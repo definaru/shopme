@@ -2,7 +2,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-![https://github.com/definaru/shopme/blob/main/.github/workflows/main.yml](https://github.com/definaru/shopme/actions/workflows/main.yml/badge.svg?branch=main)
+<a href="https://github.com/definaru/shopme/blob/main/.github/workflows/main.yml">
+  <img src="https://github.com/definaru/shopme/actions/workflows/main.yml/badge.svg?branch=main" />
+</a>
 <br />
 
 First, run the development server:
