@@ -17,7 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Git clone our repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Run a one-line script
-        run: npm run production
+        run: echo npm run production
